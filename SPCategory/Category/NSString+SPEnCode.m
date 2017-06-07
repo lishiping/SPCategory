@@ -57,12 +57,28 @@
     }
 }
 
-- (NSString *)stringByURLEncoding
+- (NSString *)urlEncode
 {
-    NSString *url = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,  (CFStringRef)self,  NULL,  (CFStringRef)@"!*'();:@&=+$,/?%#[]",  kCFStringEncodingUTF8));
+    NSString *url = nil;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_9_0
+
+    url = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,  (CFStringRef)self,  NULL,  (CFStringRef)@"!*'();:@&=+$,/?%#[]",  kCFStringEncodingUTF8));
+#else
     
+    static NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`-_"].invertedSet;
+    url =  [self stringByAddingPercentEncodingWithAllowedCharacters:charset];
+    
+#endif
+   
     return url;
 }
+
+
+- (NSString *)urlDecode;
+{
+    return [self stringByRemovingPercentEncoding];
+}
+
 
 #pragma mark - judge(判断)
 

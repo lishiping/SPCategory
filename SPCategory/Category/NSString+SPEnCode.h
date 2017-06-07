@@ -31,7 +31,9 @@
 - (NSString *)emojiString;
 
 //将字符串以URL格式编码
-- (NSString *)stringByURLEncoding;
+- (NSString *)urlEncode;
+//字符串从URL格式解码
+- (NSString *)urlDecode;
 
 //将字符串以XML格式编码
 -(NSString*)XMLString;

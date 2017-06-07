@@ -51,7 +51,7 @@ alpha   :1.0]
 -(void)sp_showPrompt:(NSString *)message delayHide:(float)seconds
 {
     [self sp_hideHUD];
-
+    
     UIView *v = [self hudSuperView];
     sp_run_in_main_thread(showPrompt(v, message, seconds, YES));
 }
@@ -59,7 +59,7 @@ alpha   :1.0]
 - (void)sp_showPromptAddWindow:(NSString *)message
 {
     [self sp_hideHUD];
-
+    
     sp_run_in_main_thread(showPrompt([[UIApplication sharedApplication].delegate window], message, 2, YES));
 }
 
@@ -178,7 +178,7 @@ void showSimpleProgressHUD(UIView *superView, NSString *text,MBProgressHUDMode m
 
 /**
  显示 ProgressHUD
-
+ 
  @param superView 父视图
  @param text 内容
  @param mode 模式
@@ -216,7 +216,7 @@ void showProgressHUD(UIView *superView, NSString *text,MBProgressHUDMode mode,fl
     if (backgroundColor) {
         hud.backgroundColor = backgroundColor;
     }
-
+    
     if (showTime > 0.0f)
     {
         showTime = MIN(60, showTime);
@@ -247,19 +247,14 @@ void showCustomHUD(UIView *view, UIView *customV ,NSString *text, NSString *deta
 
 void hideHUD(UIView *view, float delayTime, BOOL animated)
 {
-    if (delayTime > 0)
-    {
-        delayTime = MIN(60, delayTime);
-        MBProgressHUD *hud = [MBProgressHUD HUDForView:view];
-        if (hud) {
-            hud.removeFromSuperViewOnHide = YES;
-            [hud hideAnimated:animated afterDelay:delayTime];
-        }
+    MBProgressHUD *hud = [MBProgressHUD HUDForView:view];
+    if (!hud) {
+        return;
     }
-    else
-    {
-        [MBProgressHUD hideAllHUDsForView:view animated:animated];
-    }
+    hud.removeFromSuperViewOnHide = YES;
+    
+    delayTime = MIN(60, delayTime);
+    [hud hideAnimated:animated afterDelay:delayTime];
 }
 
 - (UIView *)hudSuperView;
