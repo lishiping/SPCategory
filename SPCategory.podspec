@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "SPCategory"
-  s.version      = "0.0.3"
-  s.summary      = "Often used Category lib,size,string,hud,etc,常用类别库,size,字符串,hud等"
+  s.version      = “0.0.4"
+  s.summary      = "Often used Category lib,size,string,hud,etc,常用类别库,size,字符串,hud,错误页等"
   s.homepage     = "https://github.com/lishiping/SPCategory.git"
   s.license      = "LICENSE"
   s.author       = { "lishiping" => "83118274@qq.com" }

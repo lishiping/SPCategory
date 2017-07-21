@@ -32,7 +32,6 @@ alpha   :1.0]
 #define hud_detailLabel_textColor [UIColor whiteColor]//文本颜色
 #define hud_backgroundColor [UIColor whiteColor]//整体背景色
 #define hud_bezelView_Color sp_color_rgb(0x1E1E1E)//hud块背景色
-//#define hud_bezelView_Color [UIColor darkGrayColor]
 #define hud_detailLabel_font [UIFont systemFontOfSize:14]//文本字体
 
 

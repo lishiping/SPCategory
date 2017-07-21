@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "UIViewController+SPHUD.h"
+#import "UIViewController+SPErrorView.h"
 
 @interface ViewController ()
 
@@ -20,12 +21,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
     
-  static  float sum = 0.0f;
-    [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:YES block:^(NSTimer * _Nonnull timer) {
-        
-        sum=sum +0.05f;
-           [self sp_showMBProgressHUD:@"这里是提示信息" mode:MBProgressHUDModeDeterminate progress:sum animation:YES];
-    }];
+//  static  float sum = 0.0f;
+//    [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        
+//        sum=sum +0.05f;
+//           [self sp_showMBProgressHUD:@"这里是提示信息" mode:MBProgressHUDModeDeterminate progress:sum animation:YES];
+//    }];
     
     
 //    [self showToast:@"wodhh"];
@@ -40,6 +41,13 @@
 //    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 100)];
 //    v.backgroundColor = [UIColor blueColor];
 //    [self sp_showHUDCustomView:v text:@"你好" detailText:@"详细点"];
+    
+    
+    [self addspErrorViewWithTitle:@"点击重新加载"];
+    __weak __typeof (self)  weakSelf = self;
+    self.spErrorView.tapBlock = ^(id sender){
+        [weakSelf removespErrorView];
+    };
     
 }
 
