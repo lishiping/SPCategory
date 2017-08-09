@@ -9,5 +9,6 @@ target 'SPCategory' do
 
     
 pod 'MBProgressHUD',        '1.0.0'
+pod 'SafeData'
 
 end

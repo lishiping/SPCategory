@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "UIViewController+SPHUD.h"
 #import "UIViewController+SPErrorView.h"
+#import "UIViewController+SPNavigationBarStyle.h"
+#import "UIViewController+SPStatusBarStyle.h"
 
 @interface ViewController ()
 
@@ -43,11 +45,16 @@
 //    [self sp_showHUDCustomView:v text:@"你好" detailText:@"详细点"];
     
     
-    [self addspErrorViewWithTitle:@"点击重新加载"];
     __weak __typeof (self)  weakSelf = self;
-    self.spErrorView.tapBlock = ^(id sender){
+    [self addspErrorView_block:^(id sender) {
         [weakSelf removespErrorView];
-    };
+    }];
+    
+    self.title = @"标题";
+    [self sp_navBar:BarStyle_BlackBGColor_WhiteTitle];
+//    [self sp_statusBar:StatusBarStyle_LightContent];
+    
+//    [self sp_navBar_bgColor:[UIColor greenColor] titleColor:[UIColor magentaColor]];
     
 }
 

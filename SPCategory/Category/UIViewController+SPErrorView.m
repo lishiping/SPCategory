@@ -13,7 +13,17 @@ static char spErrorViewKey;
 
 @implementation UIViewController (SPErrorView)
 
-- (void)addspErrorViewWithTitle:(NSString *)title
+-(void)addspErrorView_block:(SPButtonClickedBlock)block
+{
+    [self addspErrorView_image:nil title:nil block:block];
+}
+
+-(void)addspErrorView_title:(NSString *)title block:(SPButtonClickedBlock)block
+{
+    [self addspErrorView_image:nil title:title block:block];
+}
+
+- (void)addspErrorView_image:(UIImage *)image title:(NSString *)title block:(SPButtonClickedBlock)block
 {
     for (UIView *view in self.view.subviews) {
         if ([view isMemberOfClass:[SPErrorView class]]) {
@@ -21,8 +31,20 @@ static char spErrorViewKey;
         }
     }
     if (!self.spErrorView) {
-        self.spErrorView = [[SPErrorView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
-        self.spErrorView.titleLabel.text = title?:@"点击重新加载";
+        
+        if (!image) {
+            NSString *pathComponent = [NSString stringWithFormat:@"%@.bundle", @"SPCategory"];
+            NSString *bundlePath =[[[NSBundle bundleForClass:[self class]] resourcePath] stringByAppendingPathComponent:pathComponent];
+            NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+            
+            NSString *url =  [NSBundle pathForResource:@"reload_img@2x" ofType:@"png" inDirectory:bundle.bundlePath];
+            image= [UIImage imageWithContentsOfFile:url];
+        }
+        
+        self.spErrorView = [[SPErrorView alloc]initWithFrame:self.view.bounds
+                                                       image:image
+                                                       title:title?title:@"点击重新加载"
+                                                       block:block];
         [self.view addSubview:self.spErrorView];
         [self.view bringSubviewToFront:self.spErrorView];
     }

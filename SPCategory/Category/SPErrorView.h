@@ -14,16 +14,18 @@
 //github address//https://github.com/lishiping/SPMacro
 //github address//https://github.com/lishiping/SafeData
 //github address//https://github.com/lishiping/SPCategory
+//github address//https://github.com/lishiping/SPBaseClass
 
 //错误页
 #import <UIKit/UIKit.h>
 
-typedef void (^ButtonClickedBlock)(id sender);
+typedef void (^SPButtonClickedBlock)(id sender);
 
 @interface SPErrorView : UIView
 
-@property (nonatomic, strong) UIImageView   *imageView;
-@property (nonatomic, strong) UILabel       *titleLabel;
-@property (nonatomic, copy) ButtonClickedBlock tapBlock;
-
+-(instancetype)initWithFrame:(CGRect)frame
+                       image:(UIImage*)image
+                       title:(NSString*)title
+                       block:(SPButtonClickedBlock)block;
+;
 @end
