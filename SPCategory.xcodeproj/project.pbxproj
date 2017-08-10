@@ -23,6 +23,7 @@
 		E1C92E451F3479390090BDBB /* UIViewController+SPNavigationBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E441F3479390090BDBB /* UIViewController+SPNavigationBarStyle.m */; };
 		E1DB91EF1EDDD07F007353E0 /* NSString+SPSize.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DB91EE1EDDD07F007353E0 /* NSString+SPSize.m */; };
 		E1DB91F21EDDD469007353E0 /* NSData+SPBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DB91F11EDDD469007353E0 /* NSData+SPBase64.m */; };
+		E1F95D1A1F3C55C300F65D81 /* UIView+SPFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F95D191F3C55C300F65D81 /* UIView+SPFrame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		E1DB91EE1EDDD07F007353E0 /* NSString+SPSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SPSize.m"; sourceTree = "<group>"; };
 		E1DB91F01EDDD469007353E0 /* NSData+SPBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SPBase64.h"; sourceTree = "<group>"; };
 		E1DB91F11EDDD469007353E0 /* NSData+SPBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SPBase64.m"; sourceTree = "<group>"; };
+		E1F95D181F3C55C300F65D81 /* UIView+SPFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SPFrame.h"; sourceTree = "<group>"; };
+		E1F95D191F3C55C300F65D81 /* UIView+SPFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SPFrame.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 		E130117F1ED1D7BE00661705 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				E1F95D181F3C55C300F65D81 /* UIView+SPFrame.h */,
+				E1F95D191F3C55C300F65D81 /* UIView+SPFrame.m */,
 				E1DB91F01EDDD469007353E0 /* NSData+SPBase64.h */,
 				E1DB91F11EDDD469007353E0 /* NSData+SPBase64.m */,
 				E17B77931ED535D700A83AE8 /* NSString+SPEnCode.h */,
@@ -286,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1F95D1A1F3C55C300F65D81 /* UIView+SPFrame.m in Sources */,
 				E13011701ED1C75100661705 /* ViewController.m in Sources */,
 				E130116D1ED1C75100661705 /* AppDelegate.m in Sources */,
 				E130116A1ED1C75100661705 /* main.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  UIViewController+SPStatusBarStyle.h
+//  UIView+SPFrame.h
 //  e-mail:83118274@qq.com
 //
 //  Created by lishiping on 17/4/25.
@@ -16,22 +16,38 @@
 //github address//https://github.com/lishiping/SPCategory
 //github address//https://github.com/lishiping/SPBaseClass
 
+
 #import <UIKit/UIKit.h>
 
-// 状态栏的样式
-typedef NS_ENUM(NSInteger, EM_StatusBarStyle)
-{
-    StatusBarStyle_Default = 0,               // 默认黑色
-    StatusBarStyle_LightContent = 1,          // 白色
-    StatusBarStyle_Hidden,                    // 隐藏
-};
+@interface UIView (SPFrame)
 
-@interface UIViewController (SPStatusBarStyle)
 
-//当前设置方法可以选用，已经在ios9之后废弃了，可以使用新的方法实现
-- (void)sp_statusBar:(EM_StatusBarStyle)statusBar_style;    // 状态栏的样式
+@property CGFloat sp_x;
+@property CGFloat sp_y;
+@property CGPoint sp_origin;
 
-//设置状态栏背景色
-- (void)sp_setStatusBarBackgroundColor:(UIColor *)color;
+@property CGFloat sp_width;
+@property CGFloat sp_height;
+@property CGSize  sp_size;
+
+@property CGFloat sp_top;
+@property CGFloat sp_bottom;
+@property CGFloat sp_left;
+@property CGFloat sp_right;
+
+@property CGFloat sp_centerX;
+@property CGFloat sp_centerY;
+@property CGPoint sp_center;
+
+
+//快捷方法
+- (void)sp_bringToFront;
+
+- (void)sp_sendToBack;
+
+- (void)sp_removeAllSubViews;
+
 
 @end
+
+
