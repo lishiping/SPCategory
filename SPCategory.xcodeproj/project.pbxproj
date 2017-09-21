@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33A4D3361F73E5F7001CF006 /* UIImage+SPGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A4D3351F73E5F7001CF006 /* UIImage+SPGIF.m */; };
+		33A4D3381F73ED5B001CF006 /* pika3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 33A4D3371F73ED5B001CF006 /* pika3.gif */; };
 		6DF90F21BE83B6025A025C8E /* libPods-SPCategory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4B090F07846901E60B5FE6 /* libPods-SPCategory.a */; };
 		E105DF0C1F39B43000F18080 /* UIViewController+SPStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E105DF0B1F39B43000F18080 /* UIViewController+SPStatusBarStyle.m */; };
 		E130116A1ED1C75100661705 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E13011691ED1C75100661705 /* main.m */; };
@@ -28,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		0157726AEB35BFD18C1D3A74 /* Pods-SPCategory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPCategory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPCategory/Pods-SPCategory.debug.xcconfig"; sourceTree = "<group>"; };
+		33A4D3341F73E5F6001CF006 /* UIImage+SPGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPGIF.h"; sourceTree = "<group>"; };
+		33A4D3351F73E5F7001CF006 /* UIImage+SPGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPGIF.m"; sourceTree = "<group>"; };
+		33A4D3371F73ED5B001CF006 /* pika3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pika3.gif; sourceTree = "<group>"; };
 		5D4B090F07846901E60B5FE6 /* libPods-SPCategory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SPCategory.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C3C57D2871D164A3DA8E3D /* Pods-SPCategory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPCategory.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPCategory/Pods-SPCategory.release.xcconfig"; sourceTree = "<group>"; };
 		E105DF0A1F39B43000F18080 /* UIViewController+SPStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SPStatusBarStyle.h"; sourceTree = "<group>"; };
@@ -115,6 +120,7 @@
 				E130117F1ED1D7BE00661705 /* Category */,
 				E130116B1ED1C75100661705 /* AppDelegate.h */,
 				E130116C1ED1C75100661705 /* AppDelegate.m */,
+				33A4D3371F73ED5B001CF006 /* pika3.gif */,
 				E130116E1ED1C75100661705 /* ViewController.h */,
 				E130116F1ED1C75100661705 /* ViewController.m */,
 				E13011711ED1C75100661705 /* Main.storyboard */,
@@ -145,6 +151,8 @@
 				E17B77941ED535D700A83AE8 /* NSString+SPEnCode.m */,
 				E13011821ED1D7E400661705 /* UIViewController+SPHUD.h */,
 				E13011831ED1D7E400661705 /* UIViewController+SPHUD.m */,
+				33A4D3341F73E5F6001CF006 /* UIImage+SPGIF.h */,
+				33A4D3351F73E5F7001CF006 /* UIImage+SPGIF.m */,
 				E1AB127F1F20DCE900CA9ABD /* SPErrorView.h */,
 				E1AB12801F20DCE900CA9ABD /* SPErrorView.m */,
 				E1AB12821F20DDB400CA9ABD /* UIViewController+SPErrorView.h */,
@@ -230,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E13011781ED1C75100661705 /* LaunchScreen.storyboard in Resources */,
+				33A4D3381F73ED5B001CF006 /* pika3.gif in Resources */,
 				E13011751ED1C75100661705 /* Assets.xcassets in Resources */,
 				E1AB12891F20DE6400CA9ABD /* SPCategory.bundle in Resources */,
 				E13011731ED1C75100661705 /* Main.storyboard in Resources */,
@@ -299,6 +308,7 @@
 				E1DB91F21EDDD469007353E0 /* NSData+SPBase64.m in Sources */,
 				E1AB12841F20DDB400CA9ABD /* UIViewController+SPErrorView.m in Sources */,
 				E1DB91EF1EDDD07F007353E0 /* NSString+SPSize.m in Sources */,
+				33A4D3361F73E5F7001CF006 /* UIImage+SPGIF.m in Sources */,
 				E1AB12811F20DCE900CA9ABD /* SPErrorView.m in Sources */,
 				E13011851ED1D7E400661705 /* UIViewController+SPHUD.m in Sources */,
 				E1C92E451F3479390090BDBB /* UIViewController+SPNavigationBarStyle.m in Sources */,

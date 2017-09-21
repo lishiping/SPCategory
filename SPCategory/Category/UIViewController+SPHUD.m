@@ -18,6 +18,8 @@
 
 
 #import "UIViewController+SPHUD.h"
+#import "UIImage+SPGIF.h"
+
 
 // 使block在主线程中运行
 #define sp_run_in_main_thread(block)    if ([NSThread isMainThread]) {(block);} else {dispatch_async(dispatch_get_main_queue(), ^{(block);});}
@@ -86,10 +88,61 @@ alpha   :1.0]
     sp_run_in_main_thread(showHUD(superView, message, 0, animated));
 }
 
+#pragma mark - sp_showHUDGIF
+
+- (void)sp_showHUDGIF_name:(NSString *)gifNameInBundleStr
+{
+    [self sp_showHUDGIF_name:gifNameInBundleStr text:nil detailText:nil];
+}
+
+- (void)sp_showHUDGIF_name:(NSString *)gifNameInBundleStr
+                      text:(NSString *)text
+                detailText:(NSString *)detailText
+{
+    [self sp_showHUDGIF_name:gifNameInBundleStr text:text detailText:detailText delayHide:0.0f];
+}
+
+- (void)sp_showHUDGIF_name:(NSString *)gifNameInBundleStr
+                      text:(NSString *)text
+                detailText:(NSString *)detailText
+                 delayHide:(float)seconds
+{
+    UIImage *image = [UIImage sp_animatedGIFNamed:gifNameInBundleStr];
+    UIImageView *imageview = [[UIImageView alloc] initWithImage:image];
+    [self sp_showHUDCustomView:imageview text:text detailText:detailText delayHide:seconds];
+}
+
+- (void)sp_showHUDGIF_data:(NSData *)gifData
+                      text:(NSString *)text
+                detailText:(NSString *)detailText
+{
+    [self sp_showHUDGIF_data:gifData text:text detailText:detailText delayHide:0.0f];
+}
+
+- (void)sp_showHUDGIF_data:(NSData *)gifData
+                      text:(NSString *)text
+                detailText:(NSString *)detailText
+                 delayHide:(float)seconds
+{
+    UIImage *image = [UIImage sp_animatedGIFWithData:gifData];
+    UIImageView *imageview = [[UIImageView alloc] initWithImage:image];
+    [self sp_showHUDCustomView:imageview text:text detailText:detailText delayHide:seconds];
+}
+
+- (void)sp_showHUDCustomView:(UIView *)customV
+{
+    [self sp_showHUDCustomView:customV text:nil detailText:nil delayHide:0.0f];
+}
+
 - (void)sp_showHUDCustomView:(UIView *)customV text:(NSString *)text detailText:(NSString *)detailText
 {
+    [self sp_showHUDCustomView:customV text:text detailText:detailText delayHide:0.0f];
+}
+
+- (void)sp_showHUDCustomView:(UIView *)customV text:(NSString *)text detailText:(NSString *)detailText delayHide:(float)seconds
+{
     UIView *v = [self hudSuperView];
-    sp_run_in_main_thread(showCustomHUD(v, customV, text,detailText, 2.0f, YES));
+    sp_run_in_main_thread(showCustomHUD(v, customV, text,detailText, seconds, YES));
 }
 
 - (void)sp_updateHUDMessage:(NSString *)message
@@ -233,9 +286,16 @@ void showCustomHUD(UIView *view, UIView *customV ,NSString *text, NSString *deta
     hud = [MBProgressHUD showHUDAddedTo:view animated:animated];
     hud.removeFromSuperViewOnHide = YES;
     hud.mode = MBProgressHUDModeCustomView;
-    hud.label.text = text;
-    hud.detailsLabel.text = detailText;
-    hud.customView = customV;
+    
+    if (text.length>0) {
+        hud.label.text = text;
+    }
+    if (detailText.length>0) {
+        hud.detailsLabel.text = detailText;
+    }
+    if (customV) {
+        hud.customView = customV;
+    }
     
     if (showTime > 0)
     {

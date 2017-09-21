@@ -42,11 +42,42 @@
                  message:(NSString *)message
                animation:(BOOL)animated;
 
+- (void)sp_updateHUDMessage:(NSString *)message;
+
+/*****************sp_showHUDGIF(显示GIF图片)*********************/
+
+- (void)sp_showHUDGIF_name:(NSString *)gifNameInBundleStr;
+
+- (void)sp_showHUDGIF_name:(NSString *)gifNameInBundleStr
+                      text:(NSString *)text
+                detailText:(NSString *)detailText;
+
+- (void)sp_showHUDGIF_name:(NSString *)gifNameInBundleStr
+                      text:(NSString *)text
+                detailText:(NSString *)detailText
+                 delayHide:(float)seconds;
+
+- (void)sp_showHUDGIF_data:(NSData *)gifData
+                      text:(NSString *)text
+                detailText:(NSString *)detailText;
+
+- (void)sp_showHUDGIF_data:(NSData *)gifData
+                      text:(NSString *)text
+                detailText:(NSString *)detailText
+                 delayHide:(float)seconds;
+
+/*****************sp_showHUDCustomView(显示自定义视图)*********************/
+- (void)sp_showHUDCustomView:(UIView *)customV;
+
 - (void)sp_showHUDCustomView:(UIView *)customV
                         text:(NSString *)text
                   detailText:(NSString *)detailText;
 
-- (void)sp_updateHUDMessage:(NSString *)message;
+- (void)sp_showHUDCustomView:(UIView *)customV
+                        text:(NSString *)text
+                  detailText:(NSString *)detailText
+                   delayHide:(float)seconds;
+
 
 /*****************sp_showMBProgressHUD(显示自定义指示器)*********************/
 - (void)sp_showMBProgressHUD:(NSString *)message
