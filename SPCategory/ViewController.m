@@ -11,6 +11,7 @@
 #import "UIViewController+SPErrorView.h"
 #import "UIViewController+SPNavigationBarStyle.h"
 #import "UIViewController+SPStatusBarStyle.h"
+#import "UIImage+SPGIF.h"
 
 @interface ViewController ()
 
@@ -21,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor lightGrayColor];
     
 //  static  float sum = 0.0f;
 //    [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:YES block:^(NSTimer * _Nonnull timer) {
@@ -44,12 +45,13 @@
 //    v.backgroundColor = [UIColor blueColor];
 //    [self sp_showHUDCustomView:v text:@"你好" detailText:@"详细点"];
     
+    UIImage *image = [UIImage sp_animatedGIFNamed:@"test"];
     
-//    __weak __typeof (self)  weakSelf = self;
-//    [self addspErrorView_block:^(id sender) {
-//        [weakSelf removespErrorView];
-//    }];
-//    
+    __weak __typeof (self)  weakSelf = self;
+    [self sp_addspErrorView_image:image title:nil block:^(id sender) {
+        [weakSelf sp_removespErrorView];
+    }];
+//
 //    self.title = @"标题";
 //    [self sp_navBar:BarStyle_BlackBGColor_WhiteTitle];
 //    [self sp_statusBar:StatusBarStyle_LightContent];
@@ -57,7 +59,8 @@
 //    [self sp_navBar_bgColor:[UIColor greenColor] titleColor:[UIColor magentaColor]];
     
     
-    [self sp_showHUDGIF_name:@"pika3"];
+    
+//    [self sp_showHUDGIF_name:@"test"];
 }
 
 

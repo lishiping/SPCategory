@@ -13,17 +13,12 @@ static char spErrorViewKey;
 
 @implementation UIViewController (SPErrorView)
 
--(void)addspErrorView_block:(SPButtonClickedBlock)block
+-(void)sp_addspErrorView_block:(SPButtonClickedBlock)block
 {
-    [self addspErrorView_image:nil title:nil block:block];
+    [self sp_addspErrorView_image:nil title:@"点击重新加载" block:block];
 }
 
--(void)addspErrorView_title:(NSString *)title block:(SPButtonClickedBlock)block
-{
-    [self addspErrorView_image:nil title:title block:block];
-}
-
-- (void)addspErrorView_image:(UIImage *)image title:(NSString *)title block:(SPButtonClickedBlock)block
+- (void)sp_addspErrorView_image:(UIImage *)image title:(NSString *)title block:(SPButtonClickedBlock)block
 {
     for (UIView *view in self.view.subviews) {
         if ([view isMemberOfClass:[SPErrorView class]]) {
@@ -43,14 +38,14 @@ static char spErrorViewKey;
         
         self.spErrorView = [[SPErrorView alloc]initWithFrame:self.view.bounds
                                                        image:image
-                                                       title:title?title:@"点击重新加载"
+                                                       title:title
                                                        block:block];
         [self.view addSubview:self.spErrorView];
         [self.view bringSubviewToFront:self.spErrorView];
     }
 }
 
--(void)removespErrorView
+-(void)sp_removespErrorView
 {
     if (self.spErrorView) {
         [self.spErrorView removeFromSuperview];

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		33A4D3361F73E5F7001CF006 /* UIImage+SPGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A4D3351F73E5F7001CF006 /* UIImage+SPGIF.m */; };
 		33A4D3381F73ED5B001CF006 /* pika3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 33A4D3371F73ED5B001CF006 /* pika3.gif */; };
+		33A4D3401F74E74D001CF006 /* test.gif in Resources */ = {isa = PBXBuildFile; fileRef = 33A4D33F1F74E74D001CF006 /* test.gif */; };
 		6DF90F21BE83B6025A025C8E /* libPods-SPCategory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4B090F07846901E60B5FE6 /* libPods-SPCategory.a */; };
 		E105DF0C1F39B43000F18080 /* UIViewController+SPStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E105DF0B1F39B43000F18080 /* UIViewController+SPStatusBarStyle.m */; };
 		E130116A1ED1C75100661705 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E13011691ED1C75100661705 /* main.m */; };
@@ -33,6 +34,7 @@
 		33A4D3341F73E5F6001CF006 /* UIImage+SPGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPGIF.h"; sourceTree = "<group>"; };
 		33A4D3351F73E5F7001CF006 /* UIImage+SPGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPGIF.m"; sourceTree = "<group>"; };
 		33A4D3371F73ED5B001CF006 /* pika3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pika3.gif; sourceTree = "<group>"; };
+		33A4D33F1F74E74D001CF006 /* test.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = test.gif; sourceTree = "<group>"; };
 		5D4B090F07846901E60B5FE6 /* libPods-SPCategory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SPCategory.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C3C57D2871D164A3DA8E3D /* Pods-SPCategory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPCategory.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPCategory/Pods-SPCategory.release.xcconfig"; sourceTree = "<group>"; };
 		E105DF0A1F39B43000F18080 /* UIViewController+SPStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SPStatusBarStyle.h"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				E130117F1ED1D7BE00661705 /* Category */,
 				E130116B1ED1C75100661705 /* AppDelegate.h */,
 				E130116C1ED1C75100661705 /* AppDelegate.m */,
+				33A4D33F1F74E74D001CF006 /* test.gif */,
 				33A4D3371F73ED5B001CF006 /* pika3.gif */,
 				E130116E1ED1C75100661705 /* ViewController.h */,
 				E130116F1ED1C75100661705 /* ViewController.m */,
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E13011781ED1C75100661705 /* LaunchScreen.storyboard in Resources */,
+				33A4D3401F74E74D001CF006 /* test.gif in Resources */,
 				33A4D3381F73ED5B001CF006 /* pika3.gif in Resources */,
 				E13011751ED1C75100661705 /* Assets.xcassets in Resources */,
 				E1AB12891F20DE6400CA9ABD /* SPCategory.bundle in Resources */,

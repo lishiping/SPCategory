@@ -35,16 +35,18 @@
     _imageView.image = image;
     [self addSubview:_imageView];
     
-    _imageView.center = CGPointMake(CGRectGetWidth(self.frame)/2.0f, CGRectGetHeight(self.frame)/2.0f-50);
+    _imageView.center = CGPointMake(CGRectGetWidth(self.frame)/2.0f, CGRectGetHeight(self.frame)/2.0f);
     
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), 20)];
-    _titleLabel.text = title;
-    _titleLabel.textAlignment = NSTextAlignmentCenter;
-    _titleLabel.textColor = [UIColor lightGrayColor];
-    _titleLabel.font = [UIFont systemFontOfSize:15];
-    [self addSubview:_titleLabel];
-    
-    _titleLabel.center = CGPointMake(CGRectGetWidth(self.frame)/2.0f, CGRectGetHeight(self.frame)/2.0f);
+    if (title.length>0) {
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), 20)];
+        _titleLabel.text = title;
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.textColor = [UIColor lightGrayColor];
+        _titleLabel.font = [UIFont systemFontOfSize:15];
+        [self addSubview:_titleLabel];
+        
+        _titleLabel.center = CGPointMake(CGRectGetWidth(self.frame)/2.0f, CGRectGetHeight(self.frame)/2.0f+image.size.height/2.0f+15.0f);
+    }
     
     self.userInteractionEnabled = YES;
     [self addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapSelf:)]];
