@@ -29,6 +29,8 @@
  */
 
 /*****************sp_showPrompt(显示提示消息)*********************/
+
+- (void)sp_showToast:(NSString *)message;//不建议使用，只是为了跟安卓对应的单词
 - (void)sp_showPrompt:(NSString *)message;
 - (void)sp_showPrompt:(NSString *)message delayHide:(float)seconds;
 - (void)sp_showPromptAddWindow:(NSString *)message;

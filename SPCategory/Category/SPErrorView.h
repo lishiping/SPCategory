@@ -23,9 +23,41 @@ typedef void (^SPButtonClickedBlock)(id sender);
 
 @interface SPErrorView : UIView
 
+/**
+ 带有icon和title的错误页
+
+ @param frame 位置
+ @param image 图片
+ @param title 标题
+ @param block 回调
+ @return 实例对象
+ */
 -(instancetype)initWithFrame:(CGRect)frame
                        image:(UIImage*)image
                        title:(NSString*)title
                        block:(SPButtonClickedBlock)block;
-;
+
+
+/**
+ 带有icon和标题，子标题，两个返回按钮的错误页
+
+ @param frame 位置
+ @param image 图片
+ @param title 标题
+ @param subtitle 子标题
+ @param button1_title 第一个按钮标题
+ @param button2_title 第二个按钮标题
+ @param button1_click_block 第一个按钮回调
+ @param button2_click_block 第二个按钮回调
+ @return 实例对象
+ */
+-(instancetype)initWithFrame:(CGRect)frame
+                       image:(UIImage*)image
+                       title:(NSString *)title
+                    subtitle:(NSString *)subtitle
+               button1_title:(NSString *)button1_title
+               button2_title:(NSString *)button2_title
+         button1_click_block:(SPButtonClickedBlock)button1_click_block
+         button2_click_block:(SPButtonClickedBlock)button2_click_block;
+
 @end

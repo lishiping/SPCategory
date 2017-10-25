@@ -41,6 +41,12 @@ alpha   :1.0]
 @implementation UIViewController (SPHUD)
 
 #pragma mark - sp_showPrompt
+
+-(void)sp_showToast:(NSString *)message
+{
+    [self sp_showPrompt:message];
+}
+
 - (void)sp_showPrompt:(NSString *)message;
 {
     CGFloat time = 1.5;

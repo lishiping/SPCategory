@@ -32,7 +32,6 @@
 //    }];
     
     
-//    [self showToast:@"wodhh"];
 //    [self sp_showHUD:@"dasdsdfasdf" animation:YES];
 
 //    [self sp_showPrompt:@"这里是提示信息" delayHide:5];
@@ -45,14 +44,21 @@
 //    v.backgroundColor = [UIColor blueColor];
 //    [self sp_showHUDCustomView:v text:@"你好" detailText:@"详细点"];
     
-    UIImage *image = [UIImage sp_animatedGIFNamed:@"test"];
+    UIImage *image = [UIImage sp_animatedGIFNamed:@"pika3"];
     
     __weak __typeof (self)  weakSelf = self;
-    [self sp_addspErrorView_image:image title:nil block:^(id sender) {
+//    [self sp_addspErrorView_image:image title:@"正在加载" block:^(id sender) {
+//        [weakSelf sp_removespErrorView];
+//    }];
+    
+    
+    [self sp_addspErrorView_image:image title:@"加载" subtitle:@"请选择下面的按钮" button1_title:@"回到上一页" button2_title:@"提交反馈" button1_click_block:^(id sender) {
         [weakSelf sp_removespErrorView];
+
+    } button2_click_block:^(id sender) {
+        
     }];
 //
-//    self.title = @"标题";
 //    [self sp_navBar:BarStyle_BlackBGColor_WhiteTitle];
 //    [self sp_statusBar:StatusBarStyle_LightContent];
     
@@ -62,7 +68,6 @@
     
 //    [self sp_showHUDGIF_name:@"test"];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

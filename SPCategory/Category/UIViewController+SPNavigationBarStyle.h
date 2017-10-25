@@ -34,7 +34,8 @@ typedef NS_ENUM(NSInteger, EM_BarStyle)
 
 @interface UIViewController (SPNavigationBarStyle)
 
-- (void)sp_navBar:(EM_BarStyle)bar_style;       // 导航栏的样式
+// 设置导航栏的样式
+- (void)sp_navBar:(EM_BarStyle)bar_style;
 
 
 /**
@@ -45,5 +46,21 @@ typedef NS_ENUM(NSInteger, EM_BarStyle)
  */
 - (void)sp_navBar_bgColor:(UIColor *)bgColor
                titleColor:(UIColor*)titleColor;
+
+
+/**
+ 使用类别快速pop的方法
+ */
+- (void)sp_navigation_popToLastVC;
+
+- (void)sp_navigation_popToLastVCWithAnimated:(BOOL)animated;
+
+
+/**
+ 使用类别快速pop到根视图控制器的方法
+ */
+- (void)sp_navigation_popToRootVC;
+
+- (void)sp_navigation_popToRootVCWithAnimated:(BOOL)animated;
 
 @end

@@ -21,7 +21,7 @@
 
 @implementation UIViewController (SPNavigationBarStyle)
 
-
+#pragma mark - 设置导航栏样式的方法
 - (void)sp_navBar:(EM_BarStyle)bar_style
 {
     switch (bar_style)
@@ -110,6 +110,34 @@
     self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:titleColor}];
+}
+
+
+#pragma mark - 快速pop方法
+- (void)sp_navigation_popToLastVC
+{
+    [self sp_navigation_popToLastVCWithAnimated:YES];
+}
+
+- (void)sp_navigation_popToLastVCWithAnimated:(BOOL)animated
+{
+    if (self.navigationController.viewControllers.count > 1)
+    {
+        [self.navigationController popViewControllerAnimated:animated];
+    }
+}
+
+- (void)sp_navigation_popToRootVC
+{
+    [self sp_navigation_popToRootVCWithAnimated:YES];
+}
+
+- (void)sp_navigation_popToRootVCWithAnimated:(BOOL)animated
+{
+    if (self.navigationController.viewControllers.count > 1)
+    {
+        [self.navigationController popToRootViewControllerAnimated:animated];
+    }
 }
 
 @end
