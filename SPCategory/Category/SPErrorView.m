@@ -7,7 +7,7 @@
 //
 
 #import "SPErrorView.h"
-#import <SPMacro.h>
+#import <SPMacro/SPMacro.h>
 
 @interface SPErrorView ()
 
