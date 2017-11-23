@@ -7,38 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33A4D3361F73E5F7001CF006 /* UIImage+SPGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A4D3351F73E5F7001CF006 /* UIImage+SPGIF.m */; };
 		33A4D3381F73ED5B001CF006 /* pika3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 33A4D3371F73ED5B001CF006 /* pika3.gif */; };
 		33A4D3401F74E74D001CF006 /* test.gif in Resources */ = {isa = PBXBuildFile; fileRef = 33A4D33F1F74E74D001CF006 /* test.gif */; };
 		6DF90F21BE83B6025A025C8E /* libPods-SPCategory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4B090F07846901E60B5FE6 /* libPods-SPCategory.a */; };
-		E105DF0C1F39B43000F18080 /* UIViewController+SPStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E105DF0B1F39B43000F18080 /* UIViewController+SPStatusBarStyle.m */; };
+		9669DF8E1FC6946F0087B5BE /* NSString+SPSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF7A1FC6946E0087B5BE /* NSString+SPSize.m */; };
+		9669DF8F1FC6946F0087B5BE /* UIView+SPFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF7B1FC6946E0087B5BE /* UIView+SPFrame.m */; };
+		9669DF901FC6946F0087B5BE /* UIViewController+SPStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF7D1FC6946E0087B5BE /* UIViewController+SPStatusBarStyle.m */; };
+		9669DF911FC6946F0087B5BE /* UIImage+SPGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF7F1FC6946E0087B5BE /* UIImage+SPGIF.m */; };
+		9669DF921FC6946F0087B5BE /* NSString+SPEnCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF801FC6946E0087B5BE /* NSString+SPEnCode.m */; };
+		9669DF931FC6946F0087B5BE /* UIViewController+SPErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF811FC6946E0087B5BE /* UIViewController+SPErrorView.m */; };
+		9669DF941FC6946F0087B5BE /* UIViewController+SPNavigationBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF831FC6946E0087B5BE /* UIViewController+SPNavigationBarStyle.m */; };
+		9669DF951FC6946F0087B5BE /* NSData+SPBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF841FC6946E0087B5BE /* NSData+SPBase64.m */; };
+		9669DF961FC6946F0087B5BE /* SPErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF8A1FC6946F0087B5BE /* SPErrorView.m */; };
+		9669DF971FC6946F0087B5BE /* UIViewController+SPHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF8B1FC6946F0087B5BE /* UIViewController+SPHUD.m */; };
+		9669DF9C1FC695020087B5BE /* UIViewController+SPUIAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF9B1FC695020087B5BE /* UIViewController+SPUIAlertController.m */; };
 		E130116A1ED1C75100661705 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E13011691ED1C75100661705 /* main.m */; };
 		E130116D1ED1C75100661705 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E130116C1ED1C75100661705 /* AppDelegate.m */; };
 		E13011701ED1C75100661705 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E130116F1ED1C75100661705 /* ViewController.m */; };
 		E13011731ED1C75100661705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13011711ED1C75100661705 /* Main.storyboard */; };
 		E13011751ED1C75100661705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13011741ED1C75100661705 /* Assets.xcassets */; };
 		E13011781ED1C75100661705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13011761ED1C75100661705 /* LaunchScreen.storyboard */; };
-		E13011851ED1D7E400661705 /* UIViewController+SPHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E13011831ED1D7E400661705 /* UIViewController+SPHUD.m */; };
-		E17B77951ED535D700A83AE8 /* NSString+SPEnCode.m in Sources */ = {isa = PBXBuildFile; fileRef = E17B77941ED535D700A83AE8 /* NSString+SPEnCode.m */; };
-		E1AB12811F20DCE900CA9ABD /* SPErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AB12801F20DCE900CA9ABD /* SPErrorView.m */; };
-		E1AB12841F20DDB400CA9ABD /* UIViewController+SPErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AB12831F20DDB400CA9ABD /* UIViewController+SPErrorView.m */; };
 		E1AB12891F20DE6400CA9ABD /* SPCategory.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1AB12881F20DE6400CA9ABD /* SPCategory.bundle */; };
-		E1C92E451F3479390090BDBB /* UIViewController+SPNavigationBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E441F3479390090BDBB /* UIViewController+SPNavigationBarStyle.m */; };
-		E1DB91EF1EDDD07F007353E0 /* NSString+SPSize.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DB91EE1EDDD07F007353E0 /* NSString+SPSize.m */; };
-		E1DB91F21EDDD469007353E0 /* NSData+SPBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DB91F11EDDD469007353E0 /* NSData+SPBase64.m */; };
-		E1F95D1A1F3C55C300F65D81 /* UIView+SPFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F95D191F3C55C300F65D81 /* UIView+SPFrame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0157726AEB35BFD18C1D3A74 /* Pods-SPCategory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPCategory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPCategory/Pods-SPCategory.debug.xcconfig"; sourceTree = "<group>"; };
-		33A4D3341F73E5F6001CF006 /* UIImage+SPGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPGIF.h"; sourceTree = "<group>"; };
-		33A4D3351F73E5F7001CF006 /* UIImage+SPGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPGIF.m"; sourceTree = "<group>"; };
 		33A4D3371F73ED5B001CF006 /* pika3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pika3.gif; sourceTree = "<group>"; };
 		33A4D33F1F74E74D001CF006 /* test.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = test.gif; sourceTree = "<group>"; };
 		5D4B090F07846901E60B5FE6 /* libPods-SPCategory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SPCategory.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9669DF7A1FC6946E0087B5BE /* NSString+SPSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SPSize.m"; sourceTree = "<group>"; };
+		9669DF7B1FC6946E0087B5BE /* UIView+SPFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SPFrame.m"; sourceTree = "<group>"; };
+		9669DF7C1FC6946E0087B5BE /* UIViewController+SPErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SPErrorView.h"; sourceTree = "<group>"; };
+		9669DF7D1FC6946E0087B5BE /* UIViewController+SPStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SPStatusBarStyle.m"; sourceTree = "<group>"; };
+		9669DF7E1FC6946E0087B5BE /* UIViewController+SPStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SPStatusBarStyle.h"; sourceTree = "<group>"; };
+		9669DF7F1FC6946E0087B5BE /* UIImage+SPGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPGIF.m"; sourceTree = "<group>"; };
+		9669DF801FC6946E0087B5BE /* NSString+SPEnCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SPEnCode.m"; sourceTree = "<group>"; };
+		9669DF811FC6946E0087B5BE /* UIViewController+SPErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SPErrorView.m"; sourceTree = "<group>"; };
+		9669DF821FC6946E0087B5BE /* UIView+SPFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SPFrame.h"; sourceTree = "<group>"; };
+		9669DF831FC6946E0087B5BE /* UIViewController+SPNavigationBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SPNavigationBarStyle.m"; sourceTree = "<group>"; };
+		9669DF841FC6946E0087B5BE /* NSData+SPBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SPBase64.m"; sourceTree = "<group>"; };
+		9669DF851FC6946E0087B5BE /* NSData+SPBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SPBase64.h"; sourceTree = "<group>"; };
+		9669DF861FC6946E0087B5BE /* UIViewController+SPNavigationBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SPNavigationBarStyle.h"; sourceTree = "<group>"; };
+		9669DF871FC6946E0087B5BE /* NSString+SPSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SPSize.h"; sourceTree = "<group>"; };
+		9669DF881FC6946E0087B5BE /* UIViewController+SPHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SPHUD.h"; sourceTree = "<group>"; };
+		9669DF891FC6946F0087B5BE /* NSString+SPEnCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SPEnCode.h"; sourceTree = "<group>"; };
+		9669DF8A1FC6946F0087B5BE /* SPErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPErrorView.m; sourceTree = "<group>"; };
+		9669DF8B1FC6946F0087B5BE /* UIViewController+SPHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SPHUD.m"; sourceTree = "<group>"; };
+		9669DF8C1FC6946F0087B5BE /* SPErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPErrorView.h; sourceTree = "<group>"; };
+		9669DF8D1FC6946F0087B5BE /* UIImage+SPGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPGIF.h"; sourceTree = "<group>"; };
+		9669DF9A1FC695010087B5BE /* UIViewController+SPUIAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SPUIAlertController.h"; sourceTree = "<group>"; };
+		9669DF9B1FC695020087B5BE /* UIViewController+SPUIAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SPUIAlertController.m"; sourceTree = "<group>"; };
 		A0C3C57D2871D164A3DA8E3D /* Pods-SPCategory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPCategory.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPCategory/Pods-SPCategory.release.xcconfig"; sourceTree = "<group>"; };
-		E105DF0A1F39B43000F18080 /* UIViewController+SPStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SPStatusBarStyle.h"; sourceTree = "<group>"; };
-		E105DF0B1F39B43000F18080 /* UIViewController+SPStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SPStatusBarStyle.m"; sourceTree = "<group>"; };
 		E13011651ED1C75100661705 /* SPCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13011691ED1C75100661705 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E130116B1ED1C75100661705 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -49,23 +68,7 @@
 		E13011741ED1C75100661705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E13011771ED1C75100661705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E13011791ED1C75100661705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E13011821ED1D7E400661705 /* UIViewController+SPHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SPHUD.h"; sourceTree = "<group>"; };
-		E13011831ED1D7E400661705 /* UIViewController+SPHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SPHUD.m"; sourceTree = "<group>"; };
-		E17B77931ED535D700A83AE8 /* NSString+SPEnCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SPEnCode.h"; sourceTree = "<group>"; };
-		E17B77941ED535D700A83AE8 /* NSString+SPEnCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SPEnCode.m"; sourceTree = "<group>"; };
-		E1AB127F1F20DCE900CA9ABD /* SPErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPErrorView.h; sourceTree = "<group>"; };
-		E1AB12801F20DCE900CA9ABD /* SPErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPErrorView.m; sourceTree = "<group>"; };
-		E1AB12821F20DDB400CA9ABD /* UIViewController+SPErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SPErrorView.h"; sourceTree = "<group>"; };
-		E1AB12831F20DDB400CA9ABD /* UIViewController+SPErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SPErrorView.m"; sourceTree = "<group>"; };
 		E1AB12881F20DE6400CA9ABD /* SPCategory.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SPCategory.bundle; sourceTree = "<group>"; };
-		E1C92E431F3479390090BDBB /* UIViewController+SPNavigationBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SPNavigationBarStyle.h"; sourceTree = "<group>"; };
-		E1C92E441F3479390090BDBB /* UIViewController+SPNavigationBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SPNavigationBarStyle.m"; sourceTree = "<group>"; };
-		E1DB91ED1EDDD07F007353E0 /* NSString+SPSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SPSize.h"; sourceTree = "<group>"; };
-		E1DB91EE1EDDD07F007353E0 /* NSString+SPSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SPSize.m"; sourceTree = "<group>"; };
-		E1DB91F01EDDD469007353E0 /* NSData+SPBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SPBase64.h"; sourceTree = "<group>"; };
-		E1DB91F11EDDD469007353E0 /* NSData+SPBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SPBase64.m"; sourceTree = "<group>"; };
-		E1F95D181F3C55C300F65D81 /* UIView+SPFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SPFrame.h"; sourceTree = "<group>"; };
-		E1F95D191F3C55C300F65D81 /* UIView+SPFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SPFrame.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,42 @@
 				A0C3C57D2871D164A3DA8E3D /* Pods-SPCategory.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9669DF981FC6947B0087B5BE /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				9669DF9A1FC695010087B5BE /* UIViewController+SPUIAlertController.h */,
+				9669DF9B1FC695020087B5BE /* UIViewController+SPUIAlertController.m */,
+				9669DF8C1FC6946F0087B5BE /* SPErrorView.h */,
+				9669DF8A1FC6946F0087B5BE /* SPErrorView.m */,
+				9669DF8D1FC6946F0087B5BE /* UIImage+SPGIF.h */,
+				9669DF7F1FC6946E0087B5BE /* UIImage+SPGIF.m */,
+				9669DF821FC6946E0087B5BE /* UIView+SPFrame.h */,
+				9669DF7B1FC6946E0087B5BE /* UIView+SPFrame.m */,
+				9669DF7C1FC6946E0087B5BE /* UIViewController+SPErrorView.h */,
+				9669DF811FC6946E0087B5BE /* UIViewController+SPErrorView.m */,
+				9669DF881FC6946E0087B5BE /* UIViewController+SPHUD.h */,
+				9669DF8B1FC6946F0087B5BE /* UIViewController+SPHUD.m */,
+				9669DF861FC6946E0087B5BE /* UIViewController+SPNavigationBarStyle.h */,
+				9669DF831FC6946E0087B5BE /* UIViewController+SPNavigationBarStyle.m */,
+				9669DF7E1FC6946E0087B5BE /* UIViewController+SPStatusBarStyle.h */,
+				9669DF7D1FC6946E0087B5BE /* UIViewController+SPStatusBarStyle.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		9669DF991FC694870087B5BE /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				9669DF851FC6946E0087B5BE /* NSData+SPBase64.h */,
+				9669DF841FC6946E0087B5BE /* NSData+SPBase64.m */,
+				9669DF891FC6946F0087B5BE /* NSString+SPEnCode.h */,
+				9669DF801FC6946E0087B5BE /* NSString+SPEnCode.m */,
+				9669DF871FC6946E0087B5BE /* NSString+SPSize.h */,
+				9669DF7A1FC6946E0087B5BE /* NSString+SPSize.m */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		E130115C1ED1C75000661705 = {
@@ -146,26 +185,8 @@
 		E130117F1ED1D7BE00661705 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				E1F95D181F3C55C300F65D81 /* UIView+SPFrame.h */,
-				E1F95D191F3C55C300F65D81 /* UIView+SPFrame.m */,
-				E1DB91F01EDDD469007353E0 /* NSData+SPBase64.h */,
-				E1DB91F11EDDD469007353E0 /* NSData+SPBase64.m */,
-				E17B77931ED535D700A83AE8 /* NSString+SPEnCode.h */,
-				E17B77941ED535D700A83AE8 /* NSString+SPEnCode.m */,
-				E13011821ED1D7E400661705 /* UIViewController+SPHUD.h */,
-				E13011831ED1D7E400661705 /* UIViewController+SPHUD.m */,
-				33A4D3341F73E5F6001CF006 /* UIImage+SPGIF.h */,
-				33A4D3351F73E5F7001CF006 /* UIImage+SPGIF.m */,
-				E1AB127F1F20DCE900CA9ABD /* SPErrorView.h */,
-				E1AB12801F20DCE900CA9ABD /* SPErrorView.m */,
-				E1AB12821F20DDB400CA9ABD /* UIViewController+SPErrorView.h */,
-				E1AB12831F20DDB400CA9ABD /* UIViewController+SPErrorView.m */,
-				E1DB91ED1EDDD07F007353E0 /* NSString+SPSize.h */,
-				E1DB91EE1EDDD07F007353E0 /* NSString+SPSize.m */,
-				E1C92E431F3479390090BDBB /* UIViewController+SPNavigationBarStyle.h */,
-				E1C92E441F3479390090BDBB /* UIViewController+SPNavigationBarStyle.m */,
-				E105DF0A1F39B43000F18080 /* UIViewController+SPStatusBarStyle.h */,
-				E105DF0B1F39B43000F18080 /* UIViewController+SPStatusBarStyle.m */,
+				9669DF991FC694870087B5BE /* Foundation */,
+				9669DF981FC6947B0087B5BE /* UIKit */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -304,19 +325,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1F95D1A1F3C55C300F65D81 /* UIView+SPFrame.m in Sources */,
+				9669DF961FC6946F0087B5BE /* SPErrorView.m in Sources */,
+				9669DF971FC6946F0087B5BE /* UIViewController+SPHUD.m in Sources */,
 				E13011701ED1C75100661705 /* ViewController.m in Sources */,
+				9669DF8E1FC6946F0087B5BE /* NSString+SPSize.m in Sources */,
+				9669DF921FC6946F0087B5BE /* NSString+SPEnCode.m in Sources */,
 				E130116D1ED1C75100661705 /* AppDelegate.m in Sources */,
+				9669DF911FC6946F0087B5BE /* UIImage+SPGIF.m in Sources */,
+				9669DF931FC6946F0087B5BE /* UIViewController+SPErrorView.m in Sources */,
+				9669DF901FC6946F0087B5BE /* UIViewController+SPStatusBarStyle.m in Sources */,
 				E130116A1ED1C75100661705 /* main.m in Sources */,
-				E105DF0C1F39B43000F18080 /* UIViewController+SPStatusBarStyle.m in Sources */,
-				E1DB91F21EDDD469007353E0 /* NSData+SPBase64.m in Sources */,
-				E1AB12841F20DDB400CA9ABD /* UIViewController+SPErrorView.m in Sources */,
-				E1DB91EF1EDDD07F007353E0 /* NSString+SPSize.m in Sources */,
-				33A4D3361F73E5F7001CF006 /* UIImage+SPGIF.m in Sources */,
-				E1AB12811F20DCE900CA9ABD /* SPErrorView.m in Sources */,
-				E13011851ED1D7E400661705 /* UIViewController+SPHUD.m in Sources */,
-				E1C92E451F3479390090BDBB /* UIViewController+SPNavigationBarStyle.m in Sources */,
-				E17B77951ED535D700A83AE8 /* NSString+SPEnCode.m in Sources */,
+				9669DF9C1FC695020087B5BE /* UIViewController+SPUIAlertController.m in Sources */,
+				9669DF951FC6946F0087B5BE /* NSData+SPBase64.m in Sources */,
+				9669DF8F1FC6946F0087B5BE /* UIView+SPFrame.m in Sources */,
+				9669DF941FC6946F0087B5BE /* UIViewController+SPNavigationBarStyle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
