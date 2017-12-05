@@ -21,6 +21,13 @@
 
 @interface UIViewController (SPHUD)
 
+/*本类别的特点：
+ 1.旨在实现快捷的显示方法，一个方法代替了以往的创建初始化弹出等过程，多页面复用
+ 2.写成了ViewController的类别，使代码不集中在ViewController，如果VC代码很臃肿，不利于可读性可维护性
+ 3.写成了ViewController的类别，旨在MVC模式下，不让view层被引入到网络层在底层显示，这也是苹果开发文档的要求
+ 4.方法顺序是使用频率顺序，不常用的方法作为其他常用方法的基础方法
+ */
+
 /*
  Here is based on the MBProgressHUD categories can be used directly, not add to the self. The view above;Direct use of [self sp_showPrompt: @ "login succeeds"].
  

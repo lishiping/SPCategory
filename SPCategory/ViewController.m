@@ -12,6 +12,7 @@
 #import "UIViewController+SPNavigationBarStyle.h"
 #import "UIViewController+SPStatusBarStyle.h"
 #import "UIImage+SPGIF.h"
+#import "UIViewController+SPUIAlertController.h"
 
 @interface ViewController ()
 
@@ -52,12 +53,17 @@
 //    }];
     
     
-    [self sp_addspErrorView_image:image title:@"加载" subtitle:@"请选择下面的按钮" button1_title:@"回到上一页" button2_title:@"提交反馈" button1_click_block:^(id sender) {
-        [weakSelf sp_removespErrorView];
-
-    } button2_click_block:^(id sender) {
+//    [self sp_addspErrorView_image:image title:@"加载" subtitle:@"请选择下面的按钮" button1_title:@"回到上一页" button2_title:@"提交反馈" button1_click_block:^(id sender) {
+//        [weakSelf sp_removespErrorView];
+//
+//    } button2_click_block:^(id sender) {
+//
+//    }];
+    
+    
+    [self sp_showAlertView_title:@"更新" ok_title:@"确定" ok_block:^(UIAlertAction * _Nullable action) {
         
-    }];
+    } ];
 //
 //    [self sp_navBar:BarStyle_BlackBGColor_WhiteTitle];
 //    [self sp_statusBar:StatusBarStyle_LightContent];

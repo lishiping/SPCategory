@@ -7,6 +7,9 @@
 //
 
 #import "UIViewController+SPUIAlertController.h"
+#import <objc/runtime.h>
+
+static char spAlertVCKey;
 
 @implementation UIViewController (SPUIAlertController)
 
@@ -62,19 +65,22 @@
     //如果不满足则不弹出警告框
     if ((title||message) && (ok_title || cancel_title))
     {
-        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+        //UIAlertController是ios8提出的代替alertView的类，和block结合比代理的方式更好
+        UIAlertController *spAlertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
         
-        if (ok_title) {
+        self.spAlertVC = spAlertVC;
+        
+        if (ok_title.length>0) {
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:ok_title style:UIAlertActionStyleDefault handler:ok_block];
-            [alertVC addAction:okAction];
+            [spAlertVC addAction:okAction];
         }
         
-        if (cancel_title) {
+        if (cancel_title.length>0) {
             UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancel_title style:UIAlertActionStyleCancel handler:cancel_block];
-            [alertVC addAction:cancelAction];
+            [spAlertVC addAction:cancelAction];
         }
         
-        [self presentViewController:alertVC animated:animated completion:completion];
+        [self presentViewController:spAlertVC animated:animated completion:completion];
     }
 }
 
@@ -120,26 +126,47 @@
                      completion:(void (^ _Nullable)(void))completion
 
 {
-    //标题和信息必须有一个，这样才不会显示空白信息，
-    //确定和取消按钮也必须有一个,这样信息显示完要有消失的功能
+    //标题和信息可无，参照微信中有这么做的
+    //确定和取消按钮必须都有这样才能有选择
     //如果不满足则不弹出警告框
 
-    if ((title||message) && (ok_title || cancel_title))
+    if (ok_title.length>0 && cancel_title.length>0)
     {
-        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertController *spAlertVC = [UIAlertController alertControllerWithTitle:title?:@"" message:message?:@"" preferredStyle:UIAlertControllerStyleActionSheet];
         
-        if (ok_title) {
+        self.spAlertVC = spAlertVC;
+
+        if (ok_title.length>0) {
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:ok_title style:ok_title_style handler:ok_block];
-            [alertVC addAction:okAction];
+            [spAlertVC addAction:okAction];
         }
         
-        if (cancel_title) {
+        if (cancel_title.length>0) {
             UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancel_title style:UIAlertActionStyleCancel handler:cancel_block];
-            [alertVC addAction:cancelAction];
+            [spAlertVC addAction:cancelAction];
         }
         
-        [self presentViewController:alertVC animated:animated completion:completion];
+        [self presentViewController:spAlertVC animated:animated completion:completion];
     }
+}
+
+-(void)sp_removespAlertVC
+{
+    if (self.spAlertVC) {
+        [self.spAlertVC dismissViewControllerAnimated:NO completion:nil];
+        self.spAlertVC = nil;
+    }
+}
+
+#pragma mark - runtime 
+-(void)setSpAlertVC:(UIAlertController *)spAlertVC
+{
+    objc_setAssociatedObject(self, &spAlertVCKey, spAlertVC, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+-(UIAlertController *)spAlertVC
+{
+    return objc_getAssociatedObject(self, &spAlertVCKey);
 }
 
 @end

@@ -21,6 +21,7 @@
 
 @interface UIView (SPFrame)
 
+/*快捷的使用视图frame的get和set方法*/
 
 @property CGFloat sp_x;
 @property CGFloat sp_y;

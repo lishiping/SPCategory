@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SPCategory"
-  s.version      = "0.2.1"
+  s.version      = "0.2.2"
   s.summary      = "Often used Category lib,size,string,hud(gif图),etc,常用类别库,size,字符串,一行代码显示hud和错误页等"
   s.homepage     = "https://github.com/lishiping/SPCategory.git"
   s.license      = "LICENSE"
@@ -14,9 +14,9 @@ Pod::Spec.new do |s|
   s.dependency 'SafeData'
   s.dependency 'SPMacro'
 
-  s.source_files = 'SPCategory/Category/*.{h,m,mm,cpp,c}'
+  s.source_files = 'SPCategory/Category/*/*.{h,m,mm,cpp,c}'
 
-  s.public_header_files = 'SPCategory/Category/*.h'
+  s.public_header_files = 'SPCategory/Category/*/*.h'
  
   s.frameworks = 'UIKit','Foundation'
 
