@@ -24,6 +24,16 @@
 
 #pragma mark - enCode(编码)
 
+- (NSData *)toDataUTF8
+{
+    return  [self toDataUsingEncoding:NSUTF8StringEncoding];
+}
+
+- (NSData *)toDataUsingEncoding:(NSStringEncoding)encoding
+{
+    return ([self dataUsingEncoding:encoding]);
+}
+
 - (NSString *)md5
 {
     return [NSString md5String:self];

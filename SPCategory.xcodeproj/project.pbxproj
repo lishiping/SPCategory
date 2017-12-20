@@ -21,6 +21,12 @@
 		9669DF961FC6946F0087B5BE /* SPErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF8A1FC6946F0087B5BE /* SPErrorView.m */; };
 		9669DF971FC6946F0087B5BE /* UIViewController+SPHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF8B1FC6946F0087B5BE /* UIViewController+SPHUD.m */; };
 		9669DF9C1FC695020087B5BE /* UIViewController+SPUIAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9669DF9B1FC695020087B5BE /* UIViewController+SPUIAlertController.m */; };
+		9674C19D1FE3C4B300A9583E /* NSObject+SPAssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9674C19B1FE3C4B100A9583E /* NSObject+SPAssociatedObject.m */; };
+		9674C1A01FE3C76A00A9583E /* NSDate+SPTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 9674C19F1FE3C76A00A9583E /* NSDate+SPTransform.m */; };
+		9674C1A31FE3C9B900A9583E /* NSString+SPMultiLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9674C1A11FE3C9B800A9583E /* NSString+SPMultiLanguage.m */; };
+		9674C1A61FE3CB0500A9583E /* NSUserDefaults+SPTypeCast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9674C1A41FE3CB0400A9583E /* NSUserDefaults+SPTypeCast.m */; };
+		9674C1A91FE3CE4F00A9583E /* SPTypeCastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9674C1A71FE3CE4E00A9583E /* SPTypeCastUtil.m */; };
+		9674C1AC1FE3CE6900A9583E /* NSString+SPSimpleMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 9674C1AB1FE3CE6900A9583E /* NSString+SPSimpleMatching.m */; };
 		E130116A1ED1C75100661705 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E13011691ED1C75100661705 /* main.m */; };
 		E130116D1ED1C75100661705 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E130116C1ED1C75100661705 /* AppDelegate.m */; };
 		E13011701ED1C75100661705 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E130116F1ED1C75100661705 /* ViewController.m */; };
@@ -57,6 +63,18 @@
 		9669DF8D1FC6946F0087B5BE /* UIImage+SPGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPGIF.h"; sourceTree = "<group>"; };
 		9669DF9A1FC695010087B5BE /* UIViewController+SPUIAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SPUIAlertController.h"; sourceTree = "<group>"; };
 		9669DF9B1FC695020087B5BE /* UIViewController+SPUIAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SPUIAlertController.m"; sourceTree = "<group>"; };
+		9674C19B1FE3C4B100A9583E /* NSObject+SPAssociatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SPAssociatedObject.m"; sourceTree = "<group>"; };
+		9674C19C1FE3C4B200A9583E /* NSObject+SPAssociatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SPAssociatedObject.h"; sourceTree = "<group>"; };
+		9674C19E1FE3C76A00A9583E /* NSDate+SPTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SPTransform.h"; sourceTree = "<group>"; };
+		9674C19F1FE3C76A00A9583E /* NSDate+SPTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SPTransform.m"; sourceTree = "<group>"; };
+		9674C1A11FE3C9B800A9583E /* NSString+SPMultiLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SPMultiLanguage.m"; sourceTree = "<group>"; };
+		9674C1A21FE3C9B800A9583E /* NSString+SPMultiLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SPMultiLanguage.h"; sourceTree = "<group>"; };
+		9674C1A41FE3CB0400A9583E /* NSUserDefaults+SPTypeCast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+SPTypeCast.m"; sourceTree = "<group>"; };
+		9674C1A51FE3CB0400A9583E /* NSUserDefaults+SPTypeCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SPTypeCast.h"; sourceTree = "<group>"; };
+		9674C1A71FE3CE4E00A9583E /* SPTypeCastUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTypeCastUtil.m; sourceTree = "<group>"; };
+		9674C1A81FE3CE4F00A9583E /* SPTypeCastUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTypeCastUtil.h; sourceTree = "<group>"; };
+		9674C1AA1FE3CE6800A9583E /* NSString+SPSimpleMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SPSimpleMatching.h"; sourceTree = "<group>"; };
+		9674C1AB1FE3CE6900A9583E /* NSString+SPSimpleMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SPSimpleMatching.m"; sourceTree = "<group>"; };
 		A0C3C57D2871D164A3DA8E3D /* Pods-SPCategory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPCategory.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPCategory/Pods-SPCategory.release.xcconfig"; sourceTree = "<group>"; };
 		E13011651ED1C75100661705 /* SPCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13011691ED1C75100661705 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -126,6 +144,18 @@
 		9669DF991FC694870087B5BE /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				9674C1AA1FE3CE6800A9583E /* NSString+SPSimpleMatching.h */,
+				9674C1AB1FE3CE6900A9583E /* NSString+SPSimpleMatching.m */,
+				9674C1A81FE3CE4F00A9583E /* SPTypeCastUtil.h */,
+				9674C1A71FE3CE4E00A9583E /* SPTypeCastUtil.m */,
+				9674C1A51FE3CB0400A9583E /* NSUserDefaults+SPTypeCast.h */,
+				9674C1A41FE3CB0400A9583E /* NSUserDefaults+SPTypeCast.m */,
+				9674C1A21FE3C9B800A9583E /* NSString+SPMultiLanguage.h */,
+				9674C1A11FE3C9B800A9583E /* NSString+SPMultiLanguage.m */,
+				9674C19E1FE3C76A00A9583E /* NSDate+SPTransform.h */,
+				9674C19F1FE3C76A00A9583E /* NSDate+SPTransform.m */,
+				9674C19C1FE3C4B200A9583E /* NSObject+SPAssociatedObject.h */,
+				9674C19B1FE3C4B100A9583E /* NSObject+SPAssociatedObject.m */,
 				9669DF851FC6946E0087B5BE /* NSData+SPBase64.h */,
 				9669DF841FC6946E0087B5BE /* NSData+SPBase64.m */,
 				9669DF891FC6946F0087B5BE /* NSString+SPEnCode.h */,
@@ -233,8 +263,7 @@
 				TargetAttributes = {
 					E13011641ED1C75100661705 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 59R6D7WJ6M;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -315,7 +344,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -326,17 +355,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				9669DF961FC6946F0087B5BE /* SPErrorView.m in Sources */,
+				9674C1A91FE3CE4F00A9583E /* SPTypeCastUtil.m in Sources */,
 				9669DF971FC6946F0087B5BE /* UIViewController+SPHUD.m in Sources */,
 				E13011701ED1C75100661705 /* ViewController.m in Sources */,
+				9674C1A01FE3C76A00A9583E /* NSDate+SPTransform.m in Sources */,
 				9669DF8E1FC6946F0087B5BE /* NSString+SPSize.m in Sources */,
 				9669DF921FC6946F0087B5BE /* NSString+SPEnCode.m in Sources */,
 				E130116D1ED1C75100661705 /* AppDelegate.m in Sources */,
 				9669DF911FC6946F0087B5BE /* UIImage+SPGIF.m in Sources */,
+				9674C1A61FE3CB0500A9583E /* NSUserDefaults+SPTypeCast.m in Sources */,
 				9669DF931FC6946F0087B5BE /* UIViewController+SPErrorView.m in Sources */,
 				9669DF901FC6946F0087B5BE /* UIViewController+SPStatusBarStyle.m in Sources */,
+				9674C1AC1FE3CE6900A9583E /* NSString+SPSimpleMatching.m in Sources */,
 				E130116A1ED1C75100661705 /* main.m in Sources */,
+				9674C1A31FE3C9B900A9583E /* NSString+SPMultiLanguage.m in Sources */,
 				9669DF9C1FC695020087B5BE /* UIViewController+SPUIAlertController.m in Sources */,
 				9669DF951FC6946F0087B5BE /* NSData+SPBase64.m in Sources */,
+				9674C19D1FE3C4B300A9583E /* NSObject+SPAssociatedObject.m in Sources */,
 				9669DF8F1FC6946F0087B5BE /* UIView+SPFrame.m in Sources */,
 				9669DF941FC6946F0087B5BE /* UIViewController+SPNavigationBarStyle.m in Sources */,
 			);
@@ -461,11 +496,13 @@
 			baseConfigurationReference = 0157726AEB35BFD18C1D3A74 /* Pods-SPCategory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 59R6D7WJ6M;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SPCategory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lishping.SPCategory;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lishiping.SPCategory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -474,11 +511,13 @@
 			baseConfigurationReference = A0C3C57D2871D164A3DA8E3D /* Pods-SPCategory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 59R6D7WJ6M;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SPCategory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lishping.SPCategory;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lishiping.SPCategory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

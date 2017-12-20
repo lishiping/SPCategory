@@ -22,6 +22,11 @@
 
 #pragma mark - enCode(编码)
 
+//转为data编码为UTF8
+- (NSData *)toDataUTF8;
+//转为data指定编码模式
+- (NSData *)toDataUsingEncoding:(NSStringEncoding)encoding;
+
 //得到md5加密字符
 - (NSString *)md5;
 + (NSString *)md5String:(NSString *)str;
