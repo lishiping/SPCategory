@@ -1,10 +1,20 @@
 //
-//  NSString+spSimpleMatching.h
-//  spool
+//  NSString+SPSimpleMatching.h
+//  e-mail:83118274@qq.com
 //
-//  Created by kevin on 14-7-21.
-//  Copyright (c) 2014年 Sina. All rights reserved.
+//  Created by lishiping on 17/4/25.
+//  Copyright © 2017年 lishiping. All rights reserved.
 //
+//If you feel this open source library is of great help to you, please open the URL to the point of a great, great encouragement your recognition to the author, the author will release better open source library for you again
+//如果您感觉本开源库对您很有帮助，请打开URL给作者点个赞，您的认可给作者极大的鼓励，作者还会再发布更好的开源库给大家
+
+//github address//https://github.com/lishiping/SPWebView
+//github address//https://github.com/lishiping/SPDebugBar
+//github address//https://github.com/lishiping/SPFastPush
+//github address//https://github.com/lishiping/SPMacro
+//github address//https://github.com/lishiping/SafeData
+//github address//https://github.com/lishiping/SPCategory
+//github address//https://github.com/lishiping/SPBaseClass
 
 #import <Foundation/Foundation.h>
 

@@ -13,6 +13,7 @@
 //github address//https://github.com/lishiping/SPMacro
 //github address//https://github.com/lishiping/SafeData
 //github address//https://github.com/lishiping/SPCategory
+//github address//https://github.com/lishiping/SPBaseClass
 
 
 #import <Foundation/Foundation.h>
