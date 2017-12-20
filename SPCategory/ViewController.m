@@ -13,6 +13,7 @@
 #import "UIViewController+SPStatusBarStyle.h"
 #import "UIImage+SPGIF.h"
 #import "UIViewController+SPUIAlertController.h"
+#import "UIApplication+SPAccessAuthorityOpenURL.h"
 
 @interface ViewController ()
 
@@ -63,14 +64,14 @@
     
     [self sp_showAlertView_title:@"更新" ok_title:@"确定" ok_block:^(UIAlertAction * _Nullable action) {
         
+        [UIApplication sp_openSystemSettingNotification];
+        
     } ];
 //
 //    [self sp_navBar:BarStyle_BlackBGColor_WhiteTitle];
 //    [self sp_statusBar:StatusBarStyle_LightContent];
     
 //    [self sp_navBar_bgColor:[UIColor greenColor] titleColor:[UIColor magentaColor]];
-    
-    
     
 //    [self sp_showHUDGIF_name:@"test"];
 }
