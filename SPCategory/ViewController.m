@@ -14,6 +14,7 @@
 #import "UIImage+SPGIF.h"
 #import "UIViewController+SPUIAlertController.h"
 #import "UIApplication+SPAccessAuthorityOpenURL.h"
+#import "NSDate+SPTransform.h"
 
 @interface ViewController ()
 
@@ -62,11 +63,11 @@
 //    }];
     
     
-    [self sp_showAlertView_title:@"更新" ok_title:@"确定" ok_block:^(UIAlertAction * _Nullable action) {
-        
-        [UIApplication sp_openSystemSettingNotification];
-        
-    } ];
+//    [self sp_showAlertView_title:@"更新" ok_title:@"确定" ok_block:^(UIAlertAction * _Nullable action) {
+//
+//        [UIApplication sp_openSystemSettingNotification];
+//
+//    } ];
 //
 //    [self sp_navBar:BarStyle_BlackBGColor_WhiteTitle];
 //    [self sp_statusBar:StatusBarStyle_LightContent];
@@ -74,6 +75,16 @@
 //    [self sp_navBar_bgColor:[UIColor greenColor] titleColor:[UIColor magentaColor]];
     
 //    [self sp_showHUDGIF_name:@"test"];
+    
+    
+   long long timestamp =  [[NSDate date] sp_timestamp];
+    
+    NSLog(@"当前时间戳%llu",timestamp);
+    
+    NSString *timeStr = [[NSDate date] sp_timestampString];
+    
+    NSLog(@"当前时间戳字符串%@",timeStr);
+
 }
 
 - (void)didReceiveMemoryWarning {

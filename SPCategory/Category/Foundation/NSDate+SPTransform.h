@@ -40,8 +40,53 @@ typedef enum{
 
 @interface NSDate (SPTransform)
 
+
+/**
+ 获取当前日期的时间戳字符串
+
+ @return 时间戳字符串
+ */
++(NSString*)sp_nowTimestampString;
+
+/**
+ 获取当前日期的时间戳
+
+ @return 时间戳
+ */
++(long long)sp_nowTimestamp;
+
+/**
+ 获取日期对象的时间戳字符串
+ 
+ @return 时间戳字符串
+ */
+-(NSString*)sp_timestampString;
+
+/**
+ 获取日期对象的时间戳
+ 
+ @return 时间戳
+ */
+-(long long)sp_timestamp;
+
+/**
+ 通过时间戳字符串得到时间日期
+
+ @param timestampString 时间戳字符串
+ @return 日期
+ */
++ (NSDate *)sp_dateFromTimestampString:(NSString *)timestampString;
+
+/**
+ 通过时间戳得到时间日期
+
+ @param timestamp 时间戳
+ @return 时间日期
+ */
++ (NSDate *)sp_dateFromTimestamp:(double)timestamp;
+
 /*!
- *  将日期形式的字符串转换成NSDate
+ *  将日期形式的字符串转换成NSDate  例如（Wed Dec 27 15:58:29 +0800 2017）
  *
  *  @param timeString 要转换为NSDate的NSString
  *

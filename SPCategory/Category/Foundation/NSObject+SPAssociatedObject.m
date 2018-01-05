@@ -20,6 +20,7 @@
 #import "NSObject+SPAssociatedObject.h"
 
 @implementation NSObject (SPAssociatedObject)
+
 - (id)sp_objectWithAssociatedKey:(void *)key
 {
     return objc_getAssociatedObject(self, key);

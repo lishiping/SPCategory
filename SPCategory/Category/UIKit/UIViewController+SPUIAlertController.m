@@ -80,7 +80,9 @@ static char spAlertVCKey;
             [spAlertVC addAction:cancelAction];
         }
         
-        [self presentViewController:spAlertVC animated:animated completion:completion];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self presentViewController:spAlertVC animated:animated completion:completion];
+        });
     }
 }
 
@@ -146,15 +148,19 @@ static char spAlertVCKey;
             [spAlertVC addAction:cancelAction];
         }
         
-        [self presentViewController:spAlertVC animated:animated completion:completion];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self presentViewController:spAlertVC animated:animated completion:completion];
+        });
     }
 }
 
 -(void)sp_removespAlertVC
 {
     if (self.spAlertVC) {
-        [self.spAlertVC dismissViewControllerAnimated:NO completion:nil];
-        self.spAlertVC = nil;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.spAlertVC dismissViewControllerAnimated:NO completion:nil];
+            self.spAlertVC = nil;
+        });
     }
 }
 

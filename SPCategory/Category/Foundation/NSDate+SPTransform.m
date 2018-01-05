@@ -25,6 +25,37 @@
 
 @implementation NSDate (SPTransform)
 
++(NSString*)sp_nowTimestampString
+{
+    return [[NSDate date] sp_timestampString];
+}
+
++(long long)sp_nowTimestamp
+{
+    return [[NSDate date] sp_timestamp];
+}
+
+-(NSString*)sp_timestampString
+{
+    return [NSString stringWithFormat:@"%llu",(UInt64)[self sp_timestamp]];
+}
+
+-(long long)sp_timestamp
+{
+   return [self timeIntervalSince1970] *1000;
+}
+
++ (NSDate *)sp_dateFromTimestampString:(NSString *)timestampString
+{
+    NSTimeInterval timeInterval = [timestampString doubleValue] / 1000.0;
+    return [NSDate dateWithTimeIntervalSince1970:timeInterval];
+}
+
++ (NSDate *)sp_dateFromTimestamp:(double)timestamp
+{
+    return [NSDate dateWithTimeIntervalSince1970:(timestamp / 1000.0)];
+}
+
 + (NSDate *)sp_dateWithLocalNaturalLanguageString:(NSString *)timeString
 {
     time_t timestamp;
@@ -48,12 +79,6 @@
     }
     
     return nil;
-    
-    //    time_t timestamp = wb_timeOfValue(timeString, 0);
-    //    if (timestamp) {
-    //        return [NSDate dateWithTimeIntervalSince1970:timestamp];
-    //    }
-    //    return nil;
 }
 
 - (NSDateFormatter *)dateFormatterFromCurrentThread
