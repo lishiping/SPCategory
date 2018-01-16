@@ -18,8 +18,11 @@
 
 #import <Foundation/Foundation.h>
 
-#define WBAppLanguageDidChangeNotification @"WBAppLanguageDidChangeNotification"
 
+/*
+ *  1.本类是关于读取多语言的工具方法，主要对于模块化使用
+    2.请在重新设置本地语言的时候，重新修改[[NSUserDefaults standardUserDefaults] integerForKey:@"MulanguageSet"]的值，中文简体设置0，中文繁体设置1，英文设置为2
+ */
 /*!
  *  NSString 关于读取多语言的工具方法
  */
@@ -44,8 +47,8 @@ void clearLanguageDic();
  *
  *  @return 对应多语言的字符串
  */
-#define loadMuLanguage(keyLanguage,keyValue) \
-  _loadMuLanguage((keyLanguage),(keyValue),nil)
+#define loadMuLanguage(keyLanguage,modulename) \
+  _loadMuLanguage((keyLanguage),nil,modulename)
 
 NSString* _loadMuLanguage(NSString *keyLanguage,NSString *keyValue,NSString *modulename);
 
@@ -62,12 +65,4 @@ NSString* _loadMuLanguage(NSString *keyLanguage,NSString *keyValue,NSString *mod
 
 NSString* _loadMuLanguageEscape(NSString *keyLanguage, NSString *keyValue, NSString *modulename);
 
-/*!
- *  获取AccessibilityLocalize字符串，目前只返回了传入的key
- *
- *  @param key 要转换的字符串
- *
- *  @return AccessibilityLocalize字符串
- */
-NSString * WBAccessibilityLocalize(NSString * key);
 @end

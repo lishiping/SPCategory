@@ -17,14 +17,13 @@
 //github address//https://github.com/lishiping/SPBaseClass
 
 #import "NSString+SPMultiLanguage.h"
-#import "NSUserDefaults+SPTypeCast.h"
 
 @implementation NSString (SPMultiLanguage)
 static NSDictionary *dicLanguage = nil;
 
 NSInteger currentLanguageCode()
 {
-    NSInteger lanSet = [[NSUserDefaults standardUserDefaults] sp_integerForKey:@"MulanguageSet"];
+    NSInteger lanSet = [[NSUserDefaults standardUserDefaults] integerForKey:@"MulanguageSet"];
     return lanSet;
 }
 
@@ -35,70 +34,54 @@ void clearLanguageDic()
 
 NSString* _loadMuLanguage(NSString *keyLanguage,NSString *keyValue,NSString *modulename)
 {
-    NSInteger lanSet = [[NSUserDefaults standardUserDefaults] sp_integerForKey:@"MulanguageSet"];
-	if (!dicLanguage) {
-		switch (lanSet) {
-			case 0: {
-				;
-				NSDictionary *dicLan = [[NSDictionary alloc] initWithContentsOfFile:
-										[[NSBundle mainBundle] pathForResource:@"language_ch" ofType:@"plist"]];
-				dicLanguage = dicLan;
-				break;
-			}
-			case 1: {
-				;
-                NSString *language_path;
-
-                    language_path = @"language_tw";
-				NSDictionary *dicLantw = [[NSDictionary alloc] initWithContentsOfFile:
-                                          [[NSBundle mainBundle] pathForResource:language_path ofType:@"plist"]];
-				dicLanguage = dicLantw;
-				break;
-			}
-			case 2: {
-				;
-                NSString *language_path;
-
-                    language_path = @"language_english";
-				NSDictionary *dicLanen = [[NSDictionary alloc] initWithContentsOfFile:
-                                          [[NSBundle mainBundle] pathForResource:language_path ofType:@"plist"]];
-				dicLanguage = dicLanen;
-				break;
-			}
-			case 3: {
-				;
-				NSDictionary *dicLanMa = [[NSDictionary alloc] initWithContentsOfFile:
-										  [[NSBundle mainBundle] pathForResource:@"language_Malaysia" ofType:@"plist"]];
-				dicLanguage = dicLanMa;
-				break;
-			}
-			default:
-				break;
-		}
-	}
-	NSString *strValue;
+    NSInteger lanSet = [[NSUserDefaults standardUserDefaults] integerForKey:@"MulanguageSet"];
     
-    if ((lanSet == 2 || lanSet == 1) ) {
-        if ([[dicLanguage objectForKey:modulename] sp_hasKey:keyLanguage]) {
-            strValue = [[dicLanguage objectForKey:modulename] objectForKey:keyLanguage];
+    if (!dicLanguage) {
+        switch (lanSet) {
+            case 0: {
+                
+                NSDictionary *dicLan = [[NSDictionary alloc] initWithContentsOfFile:
+                                        [[NSBundle mainBundle] pathForResource:@"language_ch" ofType:@"plist"]];
+                dicLanguage = dicLan;
+                break;
+            }
+            case 1: {
+                
+                NSString *language_path = @"language_tw";
+                NSDictionary *dicLantw = [[NSDictionary alloc] initWithContentsOfFile:
+                                          [[NSBundle mainBundle] pathForResource:language_path ofType:@"plist"]];
+                dicLanguage = dicLantw;
+                break;
+            }
+            case 2: {
+                
+                NSString *  language_path = @"language_english";
+                NSDictionary *dicLanen = [[NSDictionary alloc] initWithContentsOfFile:
+                                          [[NSBundle mainBundle] pathForResource:language_path ofType:@"plist"]];
+                dicLanguage = dicLanen;
+                break;
+            }
+                
+            default:
+                break;
         }
-        else if ([[dicLanguage objectForKey:@"WBUIKitModule"] sp_hasKey:keyLanguage]) {
-            strValue = [[dicLanguage objectForKey:@"WBUIKitModule"] objectForKey:keyLanguage];
-        }
-        else if ([[dicLanguage objectForKey:@"backup"] sp_hasKey:keyLanguage]) {
-            strValue = [[dicLanguage objectForKey:@"backup"] objectForKey:keyLanguage];
-        }
+    }
+    NSString *strValue;
+    
+    if ((lanSet == 2 || lanSet == 1) && modulename.length>0 && [[dicLanguage objectForKey:modulename] objectForKey:keyLanguage])
+    {
+        strValue = [[dicLanguage objectForKey:modulename] objectForKey:keyLanguage];
     }
     else
     {
         strValue = [dicLanguage objectForKey:keyLanguage];
     }
-
-	if (strValue == nil) {
-		return keyLanguage;
-	} else {
-		return strValue;
-	}
+    
+    if (strValue == nil) {
+        return keyLanguage;
+    } else {
+        return strValue;
+    }
 }
 
 NSString* _loadMuLanguageEscape(NSString *keyLanguage, NSString *keyValue, NSString *modulename)
@@ -107,8 +90,4 @@ NSString* _loadMuLanguageEscape(NSString *keyLanguage, NSString *keyValue, NSStr
     return [string stringByReplacingOccurrencesOfString:@"{NEW_LINE}" withString:@"\n"];
 }
 
-NSString * WBAccessibilityLocalize(NSString * key)
-{
-    return key;
-}
 @end

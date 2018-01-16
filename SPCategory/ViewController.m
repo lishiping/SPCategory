@@ -13,7 +13,6 @@
 #import "UIViewController+SPStatusBarStyle.h"
 #import "UIImage+SPGIF.h"
 #import "UIViewController+SPUIAlertController.h"
-#import "UIApplication+SPAccessAuthorityOpenURL.h"
 #import "NSDate+SPTransform.h"
 
 @interface ViewController ()
@@ -50,9 +49,9 @@
     UIImage *image = [UIImage sp_animatedGIFNamed:@"pika3"];
     
     __weak __typeof (self)  weakSelf = self;
-//    [self sp_addspErrorView_image:image title:@"正在加载" block:^(id sender) {
-//        [weakSelf sp_removespErrorView];
-//    }];
+    [self sp_addspErrorView_image:image title:@"正在加载" block:^(id sender) {
+        [weakSelf sp_removespErrorView];
+    }];
     
     
 //    [self sp_addspErrorView_image:image title:@"加载" subtitle:@"请选择下面的按钮" button1_title:@"回到上一页" button2_title:@"提交反馈" button1_click_block:^(id sender) {

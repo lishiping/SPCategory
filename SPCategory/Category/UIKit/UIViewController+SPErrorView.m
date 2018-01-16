@@ -40,8 +40,11 @@ static char spErrorViewKey;
                                                        image:image
                                                        title:title
                                                        block:block];
-        [self.view addSubview:self.spErrorView];
-        [self.view bringSubviewToFront:self.spErrorView];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.view addSubview:self.spErrorView];
+            [self.view bringSubviewToFront:self.spErrorView];
+        });
     }
 }
 
@@ -73,8 +76,10 @@ static char spErrorViewKey;
                                                        image:image
                                                        title:title
                                                     subtitle:subtitle button1_title:button1_title button2_title:button2_title button1_click_block:button1_click_block button2_click_block:button2_click_block];
-        [self.view addSubview:self.spErrorView];
-        [self.view bringSubviewToFront:self.spErrorView];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.view addSubview:self.spErrorView];
+            [self.view bringSubviewToFront:self.spErrorView];
+        });
     }
 }
 

@@ -24,120 +24,97 @@
 #pragma mark - 设置导航栏样式的方法
 - (void)sp_navBar:(EM_BarStyle)bar_style
 {
-    switch (bar_style)
-    {
-        case BarStyle_Default:
-            break;
-            
-        case BarStyle_Hide://隐藏无动画
-            
-            [self.navigationController setNavigationBarHidden:YES animated:NO];
-            self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
-            break;
-            
-        case BarStyle_Hide_Animated://隐藏有动画
-            
-            [self.navigationController setNavigationBarHidden:YES animated:YES];
-            self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
-            break;
-            
-        case BarStyle_BlackBGColor_WhiteTitle://黑色背景，白色文字
-            
-            [self.navigationController setNavigationBarHidden:NO animated:NO];
-            self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-            self.navigationController.navigationBar.translucent = NO;
-            self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
-            [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-            break;
-            
-        case BarStyle_TranslucentBGColor_WhiteTitle://透明背景，白色文字
-            
-            [self.navigationController setNavigationBarHidden:NO animated:NO];
-            self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-            self.navigationController.navigationBar.translucent = YES;
-            self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
-            [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-            self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
-            
-            [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-            break;
-            
-        case BarStyle_WhiteBGColor_BlackTitle://白色背景，黑色文字
-            
-            [self.navigationController setNavigationBarHidden:NO animated:NO];
-            self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-            self.navigationController.navigationBar.translucent = NO;
-            self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-            self.navigationController.navigationBar.alpha = 1.f;
-            [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
-            break;
-            
-        case BarStyle_TranslucentBGColor_BlackTitle://透明背景，黑色文字
-            
-            [self.navigationController setNavigationBarHidden:NO animated:NO];
-            self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-            self.navigationController.navigationBar.translucent = YES;
-            self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
-            [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-            self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
-            
-            [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
-            break;
-            
-        case BarStyle_Translucent:
-            
-            [self.navigationController setNavigationBarHidden:NO animated:NO];
-            self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-            self.navigationController.navigationBar.translucent = YES;
-            self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
-            [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-            //去掉导航栏下方的线  UIBarMetricsDefault
-            self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
-            
-            break;
-        default:;
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        switch (bar_style)
+        {
+            case BarStyle_Default:
+                break;
+                
+            case BarStyle_Hide://隐藏无动画
+                
+                [self.navigationController setNavigationBarHidden:YES animated:NO];
+                self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
+                break;
+                
+            case BarStyle_Hide_Animated://隐藏有动画
+                
+                [self.navigationController setNavigationBarHidden:YES animated:YES];
+                self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
+                break;
+                
+            case BarStyle_BlackBGColor_WhiteTitle://黑色背景，白色文字
+                
+                [self.navigationController setNavigationBarHidden:NO animated:NO];
+                self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+                self.navigationController.navigationBar.translucent = NO;
+                self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+                [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+                break;
+                
+            case BarStyle_TranslucentBGColor_WhiteTitle://透明背景，白色文字
+                
+                [self.navigationController setNavigationBarHidden:NO animated:NO];
+                self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+                self.navigationController.navigationBar.translucent = YES;
+                self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
+                [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+                self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+                
+                [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+                break;
+                
+            case BarStyle_WhiteBGColor_BlackTitle://白色背景，黑色文字
+                
+                [self.navigationController setNavigationBarHidden:NO animated:NO];
+                self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+                self.navigationController.navigationBar.translucent = NO;
+                self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+                self.navigationController.navigationBar.alpha = 1.f;
+                [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
+                break;
+                
+            case BarStyle_TranslucentBGColor_BlackTitle://透明背景，黑色文字
+                
+                [self.navigationController setNavigationBarHidden:NO animated:NO];
+                self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+                self.navigationController.navigationBar.translucent = YES;
+                self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
+                [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+                self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+                
+                [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
+                break;
+                
+            case BarStyle_Translucent:
+                
+                [self.navigationController setNavigationBarHidden:NO animated:NO];
+                self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+                self.navigationController.navigationBar.translucent = YES;
+                self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
+                [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+                //去掉导航栏下方的线  UIBarMetricsDefault
+                self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+                
+                break;
+            default:;
+        }
+    });
 }
 
 - (void)sp_navBar_bgColor:(UIColor *)bgColor titleColor:(UIColor *)titleColor
 {
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.barTintColor = bgColor;
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    //去掉导航栏下方的线  UIBarMetricsDefault
-    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
-    
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:titleColor}];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
+        self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+        self.navigationController.navigationBar.translucent = NO;
+        self.navigationController.navigationBar.barTintColor = bgColor;
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+        //去掉导航栏下方的线  UIBarMetricsDefault
+        self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+        
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:titleColor}];
+    });
 }
 
-
-#pragma mark - 快速pop方法
-- (void)sp_navigation_popToLastVC
-{
-    [self sp_navigation_popToLastVCWithAnimated:YES];
-}
-
-- (void)sp_navigation_popToLastVCWithAnimated:(BOOL)animated
-{
-    if (self.navigationController.viewControllers.count > 1)
-    {
-        [self.navigationController popViewControllerAnimated:animated];
-    }
-}
-
-- (void)sp_navigation_popToRootVC
-{
-    [self sp_navigation_popToRootVCWithAnimated:YES];
-}
-
-- (void)sp_navigation_popToRootVCWithAnimated:(BOOL)animated
-{
-    if (self.navigationController.viewControllers.count > 1)
-    {
-        [self.navigationController popToRootViewControllerAnimated:animated];
-    }
-}
 
 @end

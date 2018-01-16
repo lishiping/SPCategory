@@ -48,19 +48,4 @@ typedef NS_ENUM(NSInteger, EM_BarStyle)
                titleColor:(UIColor*)titleColor;
 
 
-/**
- 使用类别快速pop的方法
- */
-- (void)sp_navigation_popToLastVC;
-
-- (void)sp_navigation_popToLastVCWithAnimated:(BOOL)animated;
-
-
-/**
- 使用类别快速pop到根视图控制器的方法
- */
-- (void)sp_navigation_popToRootVC;
-
-- (void)sp_navigation_popToRootVCWithAnimated:(BOOL)animated;
-
 @end

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E27C4421FEA54B4000DB8BC /* UIApplication+SPAccessAuthorityOpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E27C4411FEA54B4000DB8BC /* UIApplication+SPAccessAuthorityOpenURL.m */; };
 		33A4D3381F73ED5B001CF006 /* pika3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 33A4D3371F73ED5B001CF006 /* pika3.gif */; };
 		33A4D3401F74E74D001CF006 /* test.gif in Resources */ = {isa = PBXBuildFile; fileRef = 33A4D33F1F74E74D001CF006 /* test.gif */; };
 		6DF90F21BE83B6025A025C8E /* libPods-SPCategory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4B090F07846901E60B5FE6 /* libPods-SPCategory.a */; };
@@ -27,7 +26,6 @@
 		9674C1A31FE3C9B900A9583E /* NSString+SPMultiLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9674C1A11FE3C9B800A9583E /* NSString+SPMultiLanguage.m */; };
 		9674C1A61FE3CB0500A9583E /* NSUserDefaults+SPTypeCast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9674C1A41FE3CB0400A9583E /* NSUserDefaults+SPTypeCast.m */; };
 		9674C1A91FE3CE4F00A9583E /* SPTypeCastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9674C1A71FE3CE4E00A9583E /* SPTypeCastUtil.m */; };
-		9674C1AC1FE3CE6900A9583E /* NSString+SPSimpleMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 9674C1AB1FE3CE6900A9583E /* NSString+SPSimpleMatching.m */; };
 		E130116A1ED1C75100661705 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E13011691ED1C75100661705 /* main.m */; };
 		E130116D1ED1C75100661705 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E130116C1ED1C75100661705 /* AppDelegate.m */; };
 		E13011701ED1C75100661705 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E130116F1ED1C75100661705 /* ViewController.m */; };
@@ -39,8 +37,6 @@
 
 /* Begin PBXFileReference section */
 		0157726AEB35BFD18C1D3A74 /* Pods-SPCategory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPCategory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPCategory/Pods-SPCategory.debug.xcconfig"; sourceTree = "<group>"; };
-		1E27C4401FEA54B4000DB8BC /* UIApplication+SPAccessAuthorityOpenURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+SPAccessAuthorityOpenURL.h"; sourceTree = "<group>"; };
-		1E27C4411FEA54B4000DB8BC /* UIApplication+SPAccessAuthorityOpenURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+SPAccessAuthorityOpenURL.m"; sourceTree = "<group>"; };
 		33A4D3371F73ED5B001CF006 /* pika3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pika3.gif; sourceTree = "<group>"; };
 		33A4D33F1F74E74D001CF006 /* test.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = test.gif; sourceTree = "<group>"; };
 		5D4B090F07846901E60B5FE6 /* libPods-SPCategory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SPCategory.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,8 +72,6 @@
 		9674C1A51FE3CB0400A9583E /* NSUserDefaults+SPTypeCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SPTypeCast.h"; sourceTree = "<group>"; };
 		9674C1A71FE3CE4E00A9583E /* SPTypeCastUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTypeCastUtil.m; sourceTree = "<group>"; };
 		9674C1A81FE3CE4F00A9583E /* SPTypeCastUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTypeCastUtil.h; sourceTree = "<group>"; };
-		9674C1AA1FE3CE6800A9583E /* NSString+SPSimpleMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SPSimpleMatching.h"; sourceTree = "<group>"; };
-		9674C1AB1FE3CE6900A9583E /* NSString+SPSimpleMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SPSimpleMatching.m"; sourceTree = "<group>"; };
 		A0C3C57D2871D164A3DA8E3D /* Pods-SPCategory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPCategory.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPCategory/Pods-SPCategory.release.xcconfig"; sourceTree = "<group>"; };
 		E13011651ED1C75100661705 /* SPCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13011691ED1C75100661705 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -140,8 +134,6 @@
 				9669DF831FC6946E0087B5BE /* UIViewController+SPNavigationBarStyle.m */,
 				9669DF7E1FC6946E0087B5BE /* UIViewController+SPStatusBarStyle.h */,
 				9669DF7D1FC6946E0087B5BE /* UIViewController+SPStatusBarStyle.m */,
-				1E27C4401FEA54B4000DB8BC /* UIApplication+SPAccessAuthorityOpenURL.h */,
-				1E27C4411FEA54B4000DB8BC /* UIApplication+SPAccessAuthorityOpenURL.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -149,8 +141,6 @@
 		9669DF991FC694870087B5BE /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				9674C1AA1FE3CE6800A9583E /* NSString+SPSimpleMatching.h */,
-				9674C1AB1FE3CE6900A9583E /* NSString+SPSimpleMatching.m */,
 				9674C1A81FE3CE4F00A9583E /* SPTypeCastUtil.h */,
 				9674C1A71FE3CE4E00A9583E /* SPTypeCastUtil.m */,
 				9674C1A51FE3CB0400A9583E /* NSUserDefaults+SPTypeCast.h */,
@@ -371,11 +361,9 @@
 				9674C1A61FE3CB0500A9583E /* NSUserDefaults+SPTypeCast.m in Sources */,
 				9669DF931FC6946F0087B5BE /* UIViewController+SPErrorView.m in Sources */,
 				9669DF901FC6946F0087B5BE /* UIViewController+SPStatusBarStyle.m in Sources */,
-				9674C1AC1FE3CE6900A9583E /* NSString+SPSimpleMatching.m in Sources */,
 				E130116A1ED1C75100661705 /* main.m in Sources */,
 				9674C1A31FE3C9B900A9583E /* NSString+SPMultiLanguage.m in Sources */,
 				9669DF9C1FC695020087B5BE /* UIViewController+SPUIAlertController.m in Sources */,
-				1E27C4421FEA54B4000DB8BC /* UIApplication+SPAccessAuthorityOpenURL.m in Sources */,
 				9669DF951FC6946F0087B5BE /* NSData+SPBase64.m in Sources */,
 				9674C19D1FE3C4B300A9583E /* NSObject+SPAssociatedObject.m in Sources */,
 				9669DF8F1FC6946F0087B5BE /* UIView+SPFrame.m in Sources */,
