@@ -16,15 +16,15 @@
 //github address//https://github.com/lishiping/SPCategory
 //github address//https://github.com/lishiping/SPBaseClass
 
-#import "NSUserDefaults+SPTypeCast.h"
-#import "SPTypeCastUtil.h"
+#import "NSUserDefaults+SPSafe.h"
+#import "SPTypeTransform.h"
 
 /**
  *  返回根据所给 key 值在当前 userDefaults 对象上对应的值
  */
 #define OFK [self objectForKey:key]
 
-@implementation NSUserDefaults (SPTypeCast)
+@implementation NSUserDefaults (SPSafe)
 
 - (BOOL)sp_hasKey:(NSString *)key
 {

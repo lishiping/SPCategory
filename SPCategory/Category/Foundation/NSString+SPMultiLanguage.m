@@ -36,17 +36,17 @@ NSString* _loadMuLanguage(NSString *keyLanguage,NSString *keyValue,NSString *mod
 {
     NSInteger lanSet = [[NSUserDefaults standardUserDefaults] integerForKey:@"MulanguageSet"];
     
-    if (!dicLanguage) {
-        switch (lanSet) {
+    if (!dicLanguage)
+    {
+        switch (lanSet)
+        {
             case 0: {
-                
                 NSDictionary *dicLan = [[NSDictionary alloc] initWithContentsOfFile:
                                         [[NSBundle mainBundle] pathForResource:@"language_ch" ofType:@"plist"]];
                 dicLanguage = dicLan;
                 break;
             }
             case 1: {
-                
                 NSString *language_path = @"language_tw";
                 NSDictionary *dicLantw = [[NSDictionary alloc] initWithContentsOfFile:
                                           [[NSBundle mainBundle] pathForResource:language_path ofType:@"plist"]];
@@ -54,7 +54,6 @@ NSString* _loadMuLanguage(NSString *keyLanguage,NSString *keyValue,NSString *mod
                 break;
             }
             case 2: {
-                
                 NSString *  language_path = @"language_english";
                 NSDictionary *dicLanen = [[NSDictionary alloc] initWithContentsOfFile:
                                           [[NSBundle mainBundle] pathForResource:language_path ofType:@"plist"]];

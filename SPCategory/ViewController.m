@@ -80,7 +80,9 @@
     
     NSLog(@"当前时间戳%llu",timestamp);
     
-    NSString *timeStr = [[NSDate date] sp_timestampString];
+    spimeDisplayDescription spimeDisplayDescription =0;
+    
+    NSString *timeStr = [[NSDate date] sp_generalRelativeFormattedStringWithTimeDescription:&spimeDisplayDescription];
     
     NSLog(@"当前时间戳字符串%@",timeStr);
 

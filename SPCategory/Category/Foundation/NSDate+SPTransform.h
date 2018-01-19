@@ -40,7 +40,7 @@ typedef enum{
 
 @interface NSDate (SPTransform)
 
-
+#pragma mark - 获取时间戳，这里的时间戳都是毫秒
 /**
  获取当前日期的时间戳字符串
 
@@ -85,6 +85,7 @@ typedef enum{
  */
 + (NSDate *)sp_dateFromTimestamp:(double)timestamp;
 
+#pragma mark -字符串转时间
 /*!
  *  将日期形式的字符串转换成NSDate  例如（Wed Dec 27 15:58:29 +0800 2017）
  *
@@ -172,14 +173,22 @@ typedef enum{
  *
  *  @return YES for 今年
  */
-- (BOOL)sp_thisYear;
+- (BOOL)sp_isThisYear;
+
+
+/**
+ 判断是否是本月月
+
+ @return yes for 本月
+ */
+- (BOOL)sp_isThisMonth;
 
 /**
  *  判断是否为今天
  *
  *  @return 判断是否为今天
  */
-- (BOOL)sp_today;
+- (BOOL)sp_isThisToday;
 
 @end
 

@@ -17,6 +17,38 @@
             endingLineNumber = "52"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ViewController viewDidLoad]"
+                  moduleName = "SPCategory"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shipingli/Desktop/workspace/SPCategory/SPCategory/ViewController.m"
+                  timestampString = "538058496.960856"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "264">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__29-[ViewController viewDidLoad]_block_invoke"
+                  moduleName = "SPCategory"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shipingli/Desktop/workspace/SPCategory/SPCategory/ViewController.m"
+                  timestampString = "538058496.963388"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

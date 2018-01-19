@@ -39,7 +39,7 @@
 
 -(long long)sp_timestamp
 {
-   return [self timeIntervalSince1970] *1000;
+    return [self timeIntervalSince1970] *1000;
 }
 
 + (NSDate *)sp_dateFromTimestampString:(NSString *)timestampString
@@ -91,21 +91,21 @@
 - (NSString *)sp_formattedStringForMessageBoxDetailList
 {
     NSCalendar* calendar= [self calendarFromCurrentThread];
-	NSCalendarUnit unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
-	
+    NSCalendarUnit unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    
     NSDateFormatter *dateFormatter = [self dateFormatterFromCurrentThread];
     
     NSDateComponents *nowComponents = [calendar components:unitFlags fromDate:[NSDate date]];
-	NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:self];
-	NSDateComponents *yesterdayComponents = [calendar components:unitFlags fromDate:[[NSDate date] dateByAddingTimeInterval:(-24*60*60)]];
+    NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:self];
+    NSDateComponents *yesterdayComponents = [calendar components:unitFlags fromDate:[[NSDate date] dateByAddingTimeInterval:(-24*60*60)]];
     
-	NSString *timeStr = nil;
-	
+    NSString *timeStr = nil;
+    
     if ([nowComponents year] == [dateComponents year] &&
         [nowComponents month] == [dateComponents month] &&
         [nowComponents day] == [dateComponents day])
     {
-		[dateFormatter setDateFormat:@"HH:mm"];
+        [dateFormatter setDateFormat:@"HH:mm"];
         timeStr = [dateFormatter stringFromDate:self];
     }
     else if([yesterdayComponents year] == [dateComponents year] &&
@@ -113,16 +113,16 @@
             [yesterdayComponents day] == [dateComponents day])
     {
         [dateFormatter setDateFormat:loadMuLanguage(@"'昨天 'HH:mm", @"")];
-		timeStr = [dateFormatter stringFromDate:self];
+        timeStr = [dateFormatter stringFromDate:self];
     }
     else if([nowComponents year] == [dateComponents year])
     {
-		[dateFormatter setDateFormat:@"MM-dd HH:mm"];
+        [dateFormatter setDateFormat:@"MM-dd HH:mm"];
         timeStr = [dateFormatter stringFromDate:self];
     }
     else
     {
-		[dateFormatter setDateFormat:@"yy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:@"yy-MM-dd HH:mm"];
         timeStr = [dateFormatter stringFromDate:self];
     }
     
@@ -150,50 +150,51 @@
 
 - (NSString *)sp_briefRelativeFormattedString
 {
-	NSCalendar* calendar= [self calendarFromCurrentThread];
-	NSCalendarUnit unitFlags = NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-	
-	NSDateComponents *components = [calendar components:unitFlags fromDate:self toDate:[NSDate date] options:0];
-	
-	NSString *timeStr = nil;
-	
-	if ([components day] >= 7)
-	{
-		timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d周前", nil), 1];
-	}
-	else if ([components day] > 1)
-	{
-		timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d天s前", nil), [components day]];
-	}
-	else if ([components day] == 1)
-	{
-		timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d天前", nil), [components day]];
-	}
-	else if ([components hour] > 1)
-	{
-		timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d小时s前", nil), [components hour]];
-	}
-	else if ([components hour] == 1)
-	{
-		timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d小时前", nil), [components hour]];
-	}
-	else if ([components minute] > 1)
-	{
-		timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d分钟s前", nil), [components minute]];
-	}
-	else
-	{
-		timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d分钟前", nil), 1];
-	}
+    NSCalendar* calendar= [self calendarFromCurrentThread];
+    NSCalendarUnit unitFlags = NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    
+    NSDateComponents *components = [calendar components:unitFlags fromDate:self toDate:[NSDate date] options:0];
+    
+    NSString *timeStr = nil;
+    
+    if ([components day] >= 7)
+    {
+        timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d周前", nil), 1];
+    }
+    else if ([components day] > 1)
+    {
+        timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d天s前", nil), [components day]];
+    }
+    else if ([components day] == 1)
+    {
+        timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d天前", nil), [components day]];
+    }
+    else if ([components hour] > 1)
+    {
+        timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d小时s前", nil), [components hour]];
+    }
+    else if ([components hour] == 1)
+    {
+        timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d小时前", nil), [components hour]];
+    }
+    else if ([components minute] > 1)
+    {
+        timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d分钟s前", nil), [components minute]];
+    }
+    else
+    {
+        timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d分钟前", nil), 1];
+    }
     
     return timeStr;
 }
 
-- (NSString *)sp_generalRelativeFormattedStringWithTimeDescription:(spimeDisplayDescription *)description{
+- (NSString *)sp_generalRelativeFormattedStringWithTimeDescription:(spimeDisplayDescription *)description
+{
     
     NSCalendar *calendar = [self calendarFromCurrentThread];
-    NSCalendarUnit unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
-    
+    NSCalendarUnit unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay;
+
     NSDateFormatter *dateFormatter = [self dateFormatterFromCurrentThread];
     
     NSDateComponents *nowComponents = [calendar components:unitFlags fromDate:[NSDate date]];
@@ -271,7 +272,7 @@
         *description = _description;
     }
     return formattedString;
-
+    
 }
 
 - (NSString *)sp_generalRelativeFormattedString
@@ -282,23 +283,23 @@
 - (NSString *)sp_detailedrelativeFormattedString
 {
     NSCalendar *calendar = [self calendarFromCurrentThread];
-	NSCalendarUnit unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
-    
+    NSCalendarUnit unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay;
+
     NSDateFormatter *dateFormatter = [self dateFormatterFromCurrentThread];
     NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:self];
-	NSDateComponents *nowComponents = [calendar components:unitFlags fromDate:[NSDate date]];
-	NSDate * yesterday = [NSDate dateWithTimeIntervalSinceNow:-86400];
+    NSDateComponents *nowComponents = [calendar components:unitFlags fromDate:[NSDate date]];
+    NSDate * yesterday = [NSDate dateWithTimeIntervalSinceNow:-86400];
     NSDateComponents *yesterdayComponents = [calendar components:unitFlags fromDate:yesterday];
-	
-	NSString *formattedString = nil;
     
-	if ([nowComponents year] == [dateComponents year] &&
-	    [nowComponents month] == [dateComponents month] &&
-	    [nowComponents day] == [dateComponents day])
-	{
+    NSString *formattedString = nil;
+    
+    if ([nowComponents year] == [dateComponents year] &&
+        [nowComponents month] == [dateComponents month] &&
+        [nowComponents day] == [dateComponents day])
+    {
         [dateFormatter setDateFormat:@"H:mm"];
         formattedString = [dateFormatter stringFromDate:self];
-	}
+    }
     else if ([yesterdayComponents year] == [dateComponents year] &&
              [yesterdayComponents month] == [dateComponents month] &&
              [yesterdayComponents day] == [dateComponents day])
@@ -317,56 +318,56 @@
     }
     
     
-	return formattedString;
+    return formattedString;
 }
 
 - (NSString *)sp_relativeFormattedString
 {
-	NSCalendar *calendar = [self calendarFromCurrentThread];
-	NSCalendarUnit unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
-    
+    NSCalendar *calendar = [self calendarFromCurrentThread];
+    NSCalendarUnit unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay;
+
     NSDateFormatter *dateFormatter = [self dateFormatterFromCurrentThread];
     
-	NSDateComponents *nowComponents = [calendar components:unitFlags fromDate:[NSDate date]];
-	NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:self];
+    NSDateComponents *nowComponents = [calendar components:unitFlags fromDate:[NSDate date]];
+    NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:self];
     NSDateComponents *yesterdayComponents = [calendar components:unitFlags fromDate:[[NSDate date] dateByAddingTimeInterval:(-24*60*60)]];
     
-	NSString *formattedString = nil;
-	if ([nowComponents year] == [dateComponents year] &&
-	    [nowComponents month] == [dateComponents month] &&
-	    [nowComponents day] == [dateComponents day])				// 今天.
-	{
-		
-		int diff = [self timeIntervalSinceNow];
+    NSString *formattedString = nil;
+    if ([nowComponents year] == [dateComponents year] &&
+        [nowComponents month] == [dateComponents month] &&
+        [nowComponents day] == [dateComponents day])				// 今天.
+    {
         
-		if (diff <= 0 && diff > -60 * 60)							// 一小时之内.
-		{
-			int min = -diff / 60;
-			
-			if (min == 0)
-			{
-				min = 1;
-			}
+        int diff = [self timeIntervalSinceNow];
+        
+        if (diff <= 0 && diff > -60 * 60)							// 一小时之内.
+        {
+            int min = -diff / 60;
             
-			if (min <= 1)
-			{
+            if (min == 0)
+            {
+                min = 1;
+            }
+            
+            if (min <= 1)
+            {
                 formattedString = [NSString stringWithFormat:loadMuLanguage(@"刚刚", @""), min];
-			}
-			else
-			{
-				formattedString = [NSString stringWithFormat:loadMuLanguage(@"%d分钟s前", @""), min];
-			}
-		}
-		else if (diff > 0)
-		{
-			formattedString = [NSString stringWithFormat:loadMuLanguage(@"%d分钟前", @""), 1];
-		}
-		else
-		{
+            }
+            else
+            {
+                formattedString = [NSString stringWithFormat:loadMuLanguage(@"%d分钟前", @""), min];
+            }
+        }
+        else if (diff > 0)
+        {
+            formattedString = [NSString stringWithFormat:loadMuLanguage(@"%d分钟前", @""), 1];
+        }
+        else
+        {
             [dateFormatter setDateFormat:@"HH:mm"];
             formattedString = [dateFormatter stringFromDate:self];
-		}
-	}
+        }
+    }
     else if([yesterdayComponents year] == [dateComponents year] &&
             [yesterdayComponents month] == [dateComponents month] &&
             [yesterdayComponents day] == [dateComponents day])          // 昨天
@@ -375,38 +376,38 @@
         formattedString = [dateFormatter stringFromDate:self];
     }
     else
-	{
-		NSLocale *mainlandChinaLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
-		[dateFormatter setLocale:mainlandChinaLocale];
-		
-		if ([nowComponents year] == [dateComponents year])
-		{
-			[dateFormatter setDateFormat:@"M-d' 'HH:mm"];
-		}
-		else
-		{
-			[dateFormatter setDateFormat:@"yyyy-M-d' 'HH:mm"];
-		}
-		
-		formattedString = [dateFormatter stringFromDate:self];
-	}
-	return formattedString;
+    {
+        NSLocale *mainlandChinaLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+        [dateFormatter setLocale:mainlandChinaLocale];
+        
+        if ([nowComponents year] == [dateComponents year])
+        {
+            [dateFormatter setDateFormat:@"M-d' 'HH:mm"];
+        }
+        else
+        {
+            [dateFormatter setDateFormat:@"yyyy-M-d' 'HH:mm"];
+        }
+        
+        formattedString = [dateFormatter stringFromDate:self];
+    }
+    return formattedString;
 }
 
 - (NSString *)sp_dateTimeString
 {
     NSCalendar *calendar = [self calendarFromCurrentThread];
-	NSCalendarUnit unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSCalendarUnit unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay;
     NSDateFormatter * formatter = [self dateFormatterFromCurrentThread];
     NSDateComponents *nowComponents = [calendar components:unitFlags fromDate:[NSDate date]];
-	NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:self];
+    NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:self];
     
     NSLocale *mainlandChinaLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
     [formatter setLocale:mainlandChinaLocale];
     
     if ([nowComponents year] == [dateComponents year] &&
-	    [nowComponents month] == [dateComponents month] &&
-	    [nowComponents day] == [dateComponents day])
+        [nowComponents month] == [dateComponents month] &&
+        [nowComponents day] == [dateComponents day])
     {
         // 若为今天，不显示日期，只显示时间
         [formatter setDateFormat:@"HH:mm"];
@@ -437,57 +438,70 @@
 
 + (NSString *)sp_convertToTimeHeadFromTimeInterval:(NSTimeInterval)t
 {
-	NSString* time;
-	NSCalendar* calendar= [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-	NSCalendarUnit unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
-	NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-	
-	double dd = t;
+    NSString* time;
+    NSCalendar* calendar= [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendarUnit unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    
+    double dd = t;
     NSDate* createdAt = [NSDate dateWithTimeIntervalSince1970:dd];
     NSDateComponents *nowComponents = [calendar components:unitFlags fromDate:[NSDate date]];
     NSDateComponents *createdAtComponents = [calendar components:unitFlags fromDate:createdAt];
-	if([nowComponents year] == [createdAtComponents year] &&
+    if([nowComponents year] == [createdAtComponents year] &&
        [nowComponents month] == [createdAtComponents month] &&
        [nowComponents day] == [createdAtComponents day])
     {//今天
-		[dateFormatter setDateFormat:loadMuLanguage(@"'今天 'HH:mm",@"")];
-		
-		time = [dateFormatter stringFromDate:createdAt];
-		
+        [dateFormatter setDateFormat:loadMuLanguage(@"'今天 'HH:mm",@"")];
+        
+        time = [dateFormatter stringFromDate:createdAt];
+        
     } else if ([nowComponents year] == [createdAtComponents year]) {
-		NSLocale *cnLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
-		[dateFormatter setLocale:cnLocale];
-		//		[dateFormatter setDateFormat:loadMuLanguage(@"MMMMd'日 'HH:mm",@"")];
-		[dateFormatter setDateFormat:@"MM-dd' 'HH:mm"];
-		time = [dateFormatter stringFromDate:createdAt];
-	} else {//去年
-		NSLocale *cnLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
-		[dateFormatter setLocale:cnLocale];
-		[dateFormatter setDateFormat:@"yyyy-MM-dd' 'HH:mm"];
-		time = [dateFormatter stringFromDate:createdAt];
+        NSLocale *cnLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+        [dateFormatter setLocale:cnLocale];
+        //		[dateFormatter setDateFormat:loadMuLanguage(@"MMMMd'日 'HH:mm",@"")];
+        [dateFormatter setDateFormat:@"MM-dd' 'HH:mm"];
+        time = [dateFormatter stringFromDate:createdAt];
+    } else {//去年
+        NSLocale *cnLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+        [dateFormatter setLocale:cnLocale];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd' 'HH:mm"];
+        time = [dateFormatter stringFromDate:createdAt];
     }
-	
+    
     return time;
 }
 
-- (BOOL)sp_thisYear
+- (BOOL)sp_isThisYear
 {
-    NSCalendar *cale = [NSCalendar currentCalendar];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
     NSCalendarUnit unit = NSCalendarUnitYear;
     
-    NSDateComponents *nowCmps = [cale components:unit fromDate:[NSDate date]];
-    NSDateComponents *dateCmps = [cale components:unit fromDate:self];
+    NSDateComponents *nowCmps = [calendar components:unit fromDate:[NSDate date]];
+    NSDateComponents *dateCmps = [calendar components:unit fromDate:self];
     
     return nowCmps.year == dateCmps.year;
 }
 
-- (BOOL)sp_today {
+- (BOOL)sp_isThisMonth
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendarUnit unit =  NSCalendarUnitMonth |  NSCalendarUnitYear;
+    
+    // 1.获得当前时间的年月日
+    NSDateComponents *nowCmps = [calendar components:unit fromDate:[NSDate date]];
+    // 2.获得self的年月日
+    NSDateComponents *selfCmps = [calendar components:unit fromDate:self];
+    
+    return (selfCmps.year == nowCmps.year) && (selfCmps.month == nowCmps.month);
+}
+
+- (BOOL)sp_isThisToday
+{
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitMonth |  NSCalendarUnitYear;
     
     // 1.获得当前时间的年月日
     NSDateComponents *nowCmps = [calendar components:unit fromDate:[NSDate date]];
-    
     // 2.获得self的年月日
     NSDateComponents *selfCmps = [calendar components:unit fromDate:self];
     

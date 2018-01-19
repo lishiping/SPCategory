@@ -19,7 +19,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NSUserDefaults (SPTypeCast)
+@interface NSUserDefaults (SPSafe)
 
 #pragma mark - customize
 /*!

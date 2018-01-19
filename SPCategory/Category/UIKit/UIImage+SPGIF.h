@@ -37,6 +37,13 @@
  */
 + (UIImage *)sp_animatedGIFWithData:(NSData *)data;
 
+
+/**
+ gif图按照尺寸截取
+
+ @param size 要截取的尺寸
+ @return 返回的gif图
+ */
 - (UIImage *)sp_animatedImageByScalingAndCroppingToSize:(CGSize)size;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  SPTypeCastUtil.m
+//  SPTypeTransform.m
 //  e-mail:83118274@qq.com
 //
 //  Created by lishiping on 17/4/25.
@@ -16,8 +16,7 @@
 //github address//https://github.com/lishiping/SPCategory
 //github address//https://github.com/lishiping/SPBaseClass
 
-#import "SPTypeCastUtil.h"
-//#import "NSString+SPSimpleMatching.h"
+#import "SPTypeTransform.h"
 #import "NSObject+SPAssociatedObject.h"
 
 id sp_nonnullValue(id value)
@@ -152,7 +151,7 @@ double sp_doubleOfValue(id value, double defaultValue)
 CGPoint sp_pointOfValue(id value, CGPoint defaultValue)
 {
     if (value && [value isKindOfClass:[NSString class]] && ((NSString*)value).length>0)
-        return NSPointFromString(value);
+        return CGPointFromString(value);
     else if ([value isKindOfClass:[NSValue class]])
         return [value CGPointValue];
     
@@ -162,7 +161,7 @@ CGPoint sp_pointOfValue(id value, CGPoint defaultValue)
 CGSize sp_sizeOfValue(id value, CGSize defaultValue)
 {
     if ([value isKindOfClass:[NSString class]] && ((NSString*)value).length>0 )
-        return NSSizeFromString(value);
+        return CGSizeFromString(value);
     else if ([value isKindOfClass:[NSValue class]])
         return [value CGSizeValue];
     
@@ -172,7 +171,7 @@ CGSize sp_sizeOfValue(id value, CGSize defaultValue)
 CGRect sp_rectOfValue(id value, CGRect defaultValue)
 {
     if ([value isKindOfClass:[NSString class]] && ((NSString*)value).length>0)
-        return NSRectFromString(value);
+        return CGRectFromString(value);
     else if ([value isKindOfClass:[NSValue class]])
         return [value CGRectValue];
     

@@ -1,5 +1,5 @@
 //
-//  SPTypeCastUtil.h
+//  SPTypeTransform.h
 //  e-mail:83118274@qq.com
 //
 //  Created by lishiping on 17/4/25.
@@ -16,48 +16,8 @@
 //github address//https://github.com/lishiping/SPCategory
 //github address//https://github.com/lishiping/SPBaseClass
 
-//#if !defined(TARGET_OS_IPHONE) || !TARGET_OS_IPHONE
-////#import <Foundation/NSGeometry.h> // For NSPoint, NSSize, and NSRect
-////#import <AppKit/AppKit.h>
-//#else
-#import <CoreGraphics/CGGeometry.h>
 #import <UIKit/UIKit.h>
-//#endif
-
 #import <Foundation/Foundation.h>
-
-#if !defined(TARGET_OS_IPHONE) || !TARGET_OS_IPHONE
-#define CGPointValue pointValue
-#define CGRectValue rectValue
-#define CGSizeValue sizeValue
-#define UIImage NSImage
-#else
-#import <UIKit/UIGeometry.h>
-/*!
- *  CGPoint结构值装换为NSString值
- */
-#define NSPointFromString CGPointFromString
-/*!
- *  CGRect结构值装换为NSString值
- */
-#define NSRectFromString CGRectFromString
-/*!
- *  CGSize结构值装换为NSString值
- */
-#define NSSizeFromString CGSizeFromString
-/*!
- *  返回CGPointMake(0, 0)
- */
-#define NSZeroPoint CGPointZero
-/*!
- *  CGSizeMake(0, 0)
- */
-#define NSZeroSize CGSizeZero
-/*!
- *  CGRectMake(0, 0, 0, 0)
- */
-#define NSZeroRect CGRectZero
-#endif
 
 
 /*!
@@ -159,7 +119,6 @@ CGPoint sp_pointOfValue(id value, CGPoint defaultValue);
  *  @return 是CGSize类型返回value，不是则返回defaultValue
  */
 CGSize sp_sizeOfValue(id value, CGSize defaultValue);
-
 
 /*!
  *  返回当前value的CGRect值，不是则返回defaultValue
