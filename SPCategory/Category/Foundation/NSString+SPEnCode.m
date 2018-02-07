@@ -70,15 +70,16 @@
 - (NSString *)urlEncode
 {
     NSString *url = nil;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_9_0
 
-    url = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,  (CFStringRef)self,  NULL,  (CFStringRef)@"!*'();:@&=+$,/?%#[]",  kCFStringEncodingUTF8));
-#else
-    
-    static NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`-_"].invertedSet;
-    url =  [self stringByAddingPercentEncodingWithAllowedCharacters:charset];
-    
-#endif
+    if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_9_0) {
+        url = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,  (CFStringRef)self,  NULL,  (CFStringRef)@"!*'();:@&=+$,/?%#[]",  kCFStringEncodingUTF8));
+    }
+    else
+    {
+        // RFC 3986 规范
+         NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`-_"].invertedSet;
+        url =  [self stringByAddingPercentEncodingWithAllowedCharacters:charset];
+    }
    
     return url;
 }

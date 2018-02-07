@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, EM_StatusBarStyle)
 {
     StatusBarStyle_Default = 0,               // 默认黑色
     StatusBarStyle_LightContent = 1,          // 白色
-    StatusBarStyle_Hidden,                    // 隐藏
+    StatusBarStyle_Hidden = 2,                // 隐藏
 };
 
 @interface UIViewController (SPStatusBarStyle)
