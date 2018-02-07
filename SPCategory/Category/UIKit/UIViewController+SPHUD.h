@@ -148,4 +148,51 @@
 - (void)sp_hideHUD:(BOOL)animated delay:(float)seconds;
 - (void)sp_hideHUDInView:(UIView *)view delay:(float)seconds animated:(BOOL)animated;
 
+/**
+ *  显示提示消息，白底黑字
+ */
+void showPrompt(UIView *superView, NSString *text, float showTime, BOOL animated);
+
+/**
+ *  显示 hud，带动画等待效果,白底黑字
+ */
+void showHUD(UIView *superView, NSString *text, float showTime, BOOL animated);
+
+/**
+ *  显示 hud，带动画等待效果,自定义颜色
+ */
+void showSimpleProgressHUD(UIView *superView, NSString *text,MBProgressHUDMode mode,float progress, float showTime, BOOL animated);
+
+/**
+ 显示 ProgressHUD
+ 
+ @param superView 父视图
+ @param text 内容
+ @param mode 模式
+ @param showTime 显示时间
+ @param animated 是否动画
+ */
+void showProgressHUD(UIView *superView, NSString *text,MBProgressHUDMode mode,float progress, float showTime, BOOL animated,UIFont *font,UIColor *textColor,UIColor *bezelViewColor,UIColor *backgroundColor);
+
+/**
+ 显示 ProgressHUD
+ 
+ @param superView 父视图
+ @param customView 自定义视图
+ @param text 内容
+ @param detailText 详细内容
+ @param showTime 显示时间
+ @param animated 是否动画
+ */
+void showCustomHUD(UIView *superView, UIView *customView ,NSString *text, NSString *detailText,float showTime, BOOL animated);
+
+/**
+ 隐藏活动视图
+
+ @param superView 俯视图
+ @param delayTime 延迟隐藏时间
+ @param animated 是否动画
+ */
+void hideHUD(UIView *superView, float delayTime, BOOL animated);
+
 @end

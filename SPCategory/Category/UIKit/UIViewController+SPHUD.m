@@ -282,14 +282,14 @@ void showProgressHUD(UIView *superView, NSString *text,MBProgressHUDMode mode,fl
     }
 }
 
-void showCustomHUD(UIView *view, UIView *customV ,NSString *text, NSString *detailText,float showTime, BOOL animated)
+void showCustomHUD(UIView *superView, UIView *customView ,NSString *text, NSString *detailText,float showTime, BOOL animated)
 {
-    MBProgressHUD *hud = [MBProgressHUD HUDForView:view];
+    MBProgressHUD *hud = [MBProgressHUD HUDForView:superView];
     if (hud)
     {
         [hud removeFromSuperview];
     }
-    hud = [MBProgressHUD showHUDAddedTo:view animated:animated];
+    hud = [MBProgressHUD showHUDAddedTo:superView animated:animated];
     hud.removeFromSuperViewOnHide = YES;
     hud.mode = MBProgressHUDModeCustomView;
     
@@ -299,8 +299,8 @@ void showCustomHUD(UIView *view, UIView *customV ,NSString *text, NSString *deta
     if (detailText.length>0) {
         hud.detailsLabel.text = detailText;
     }
-    if (customV) {
-        hud.customView = customV;
+    if (customView) {
+        hud.customView = customView;
     }
     
     if (showTime > 0)
@@ -310,9 +310,9 @@ void showCustomHUD(UIView *view, UIView *customV ,NSString *text, NSString *deta
     }
 }
 
-void hideHUD(UIView *view, float delayTime, BOOL animated)
+void hideHUD(UIView *superView, float delayTime, BOOL animated)
 {
-    MBProgressHUD *hud = [MBProgressHUD HUDForView:view];
+    MBProgressHUD *hud = [MBProgressHUD HUDForView:superView];
     if (!hud) {
         return;
     }

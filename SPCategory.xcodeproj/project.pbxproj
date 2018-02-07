@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EB5F505202046D000007899 /* NSURL+SPEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5F504202046D000007899 /* NSURL+SPEncode.m */; };
 		1EB5F50820204BBC00007899 /* UITableViewCell+SPReuseIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5F50720204BBC00007899 /* UITableViewCell+SPReuseIdentifier.m */; };
 		33A4D3381F73ED5B001CF006 /* pika3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 33A4D3371F73ED5B001CF006 /* pika3.gif */; };
 		33A4D3401F74E74D001CF006 /* test.gif in Resources */ = {isa = PBXBuildFile; fileRef = 33A4D33F1F74E74D001CF006 /* test.gif */; };
@@ -39,8 +38,6 @@
 
 /* Begin PBXFileReference section */
 		0157726AEB35BFD18C1D3A74 /* Pods-SPCategory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPCategory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPCategory/Pods-SPCategory.debug.xcconfig"; sourceTree = "<group>"; };
-		1EB5F503202046D000007899 /* NSURL+SPEncode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+SPEncode.h"; sourceTree = "<group>"; };
-		1EB5F504202046D000007899 /* NSURL+SPEncode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+SPEncode.m"; sourceTree = "<group>"; };
 		1EB5F50620204BBC00007899 /* UITableViewCell+SPReuseIdentifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+SPReuseIdentifier.h"; sourceTree = "<group>"; };
 		1EB5F50720204BBC00007899 /* UITableViewCell+SPReuseIdentifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+SPReuseIdentifier.m"; sourceTree = "<group>"; };
 		33A4D3371F73ED5B001CF006 /* pika3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pika3.gif; sourceTree = "<group>"; };
@@ -165,8 +162,6 @@
 				9669DF801FC6946E0087B5BE /* NSString+SPEnCode.m */,
 				9669DF871FC6946E0087B5BE /* NSString+SPSize.h */,
 				9669DF7A1FC6946E0087B5BE /* NSString+SPSize.m */,
-				1EB5F503202046D000007899 /* NSURL+SPEncode.h */,
-				1EB5F504202046D000007899 /* NSURL+SPEncode.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -367,7 +362,6 @@
 				9674C1A01FE3C76A00A9583E /* NSDate+SPTransform.m in Sources */,
 				9669DF8E1FC6946F0087B5BE /* NSString+SPSize.m in Sources */,
 				9669DF921FC6946F0087B5BE /* NSString+SPEnCode.m in Sources */,
-				1EB5F505202046D000007899 /* NSURL+SPEncode.m in Sources */,
 				E130116D1ED1C75100661705 /* AppDelegate.m in Sources */,
 				9669DF911FC6946F0087B5BE /* UIImage+SPGIF.m in Sources */,
 				9674C1A61FE3CB0500A9583E /* NSUserDefaults+SPSafe.m in Sources */,

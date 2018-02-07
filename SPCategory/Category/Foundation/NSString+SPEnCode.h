@@ -34,10 +34,33 @@
 //转换为表情字符
 - (NSString *)emojiString;
 
+//将url的字符串编码后生成url并返回,
+//lishiping://login?title=你好&username=lishiping&password=123456
+//转化为
+//lishiping://login?title=%e4%bd%a0%e5%a5%bd&username=lishiping&password=123456
+-(NSURL*)getURLWithStringByurlEncode;
+
+//将url对象解码后返回字符串
+//lishiping://login?title=%e4%bd%a0%e5%a5%bd&username=lishiping&password=123456
+//转化为
+//lishiping://login?title=你好&username=lishiping&password=123456
++(NSString*)getStringByurlDecodeWithURL:(NSURL*)url;
+//将url的字符串解码后返回字符串
+-(NSString*)getStringByurlDecode;
+
+//从url字符串中得到编码后的请求参数
+-(NSDictionary*)getParamFromURLByurlEncode;
+//从url字符串得到解码后的请求参数
+-(NSDictionary*)getParamFromURLByurlDecode;
+
+//对字典请求参数排序并生成带地址符的字符串，排序是为了计算md5值的时候顺序正确
+- (NSString *)stringForHTTPBySortParameters:(NSDictionary*)param;
+
 //将字符串以URL格式编码
 - (NSString *)urlEncode;
 //字符串从URL格式解码
 - (NSString *)urlDecode;
+
 
 //将字符串以XML格式编码
 -(NSString*)XMLString;

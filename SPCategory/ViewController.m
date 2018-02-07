@@ -14,6 +14,7 @@
 #import "UIImage+SPGIF.h"
 #import "UIViewController+SPUIAlertController.h"
 #import "NSDate+SPTransform.h"
+#import "NSString+SPEnCode.h"
 
 @interface ViewController ()
 
@@ -46,12 +47,12 @@
 //    v.backgroundColor = [UIColor blueColor];
 //    [self sp_showHUDCustomView:v text:@"你好" detailText:@"详细点"];
     
-    UIImage *image = [UIImage sp_animatedGIFNamed:@"pika3"];
-    
-    __weak __typeof (self)  weakSelf = self;
-    [self sp_addspErrorView_image:image title:@"正在加载" block:^(id sender) {
-        [weakSelf sp_removespErrorView];
-    }];
+//    UIImage *image = [UIImage sp_animatedGIFNamed:@"pika3"];
+//
+//    __weak __typeof (self)  weakSelf = self;
+//    [self sp_addspErrorView_image:image title:@"正在加载" block:^(id sender) {
+//        [weakSelf sp_removespErrorView];
+//    }];
     
     
 //    [self sp_addspErrorView_image:image title:@"加载" subtitle:@"请选择下面的按钮" button1_title:@"回到上一页" button2_title:@"提交反馈" button1_click_block:^(id sender) {
@@ -76,16 +77,27 @@
 //    [self sp_showHUDGIF_name:@"test"];
     
     
-   long long timestamp =  [[NSDate date] sp_timestamp];
-    
-    NSLog(@"当前时间戳%llu",timestamp);
-    
-    spimeDisplayDescription spimeDisplayDescription =0;
-    
-    NSString *timeStr = [[NSDate date] sp_generalRelativeFormattedStringWithTimeDescription:&spimeDisplayDescription];
-    
-    NSLog(@"当前时间戳字符串%@",timeStr);
+//   long long timestamp =  [[NSDate date] sp_timestamp];
+//
+//    NSLog(@"当前时间戳%llu",timestamp);
+//
+//    spimeDisplayDescription spimeDisplayDescription =0;
+//
+//    NSString *timeStr = [[NSDate date] sp_generalRelativeFormattedStringWithTimeDescription:&spimeDisplayDescription];
+//
+//    NSLog(@"当前时间戳字符串%@",timeStr);
 
+ 
+//    NSString *urlStr = @"lishiping://login?title=你好&username=lishiping&password=123456&appear_type=0&animated=1&ni=1";
+//
+//    NSURL *url = urlStr.getURLWithStringByurlEncode;
+//    NSLog(@"urlencode===%@",url);
+//
+//    NSString *urldecode = [NSString getStringByurlDecodeWithURL:url];
+//
+//    NSLog(@"urldecode===%@",urldecode);
+
+    
 }
 
 - (void)didReceiveMemoryWarning {

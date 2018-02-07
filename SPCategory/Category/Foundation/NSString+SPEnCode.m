@@ -67,20 +67,152 @@
     }
 }
 
+-(NSURL*)getURLWithStringByurlEncode
+{
+    if (self.length>0)
+    {
+        NSString *absoluteString = self;
+        
+        NSRange rg = [absoluteString rangeOfString:@"?"];
+        
+        NSString *queryStr = [absoluteString substringWithRange:NSMakeRange(rg.location+1, absoluteString.length-rg.location-1)];
+        
+        NSDictionary *dic = [queryStr getParamFromURLByurlEncode];
+        
+        NSString *parameters = [self stringForHTTPBySortParameters:dic];
+        
+        NSString *urlString = [absoluteString substringToIndex:rg.location+1];
+        urlString = [urlString stringByAppendingString:parameters];
+        
+        return [NSURL URLWithString:urlString];
+    }
+    return nil;
+}
+
++(NSString*)getStringByurlDecodeWithURL:(NSURL*)url
+{
+    NSString *absoluteString = url.absoluteString;
+    return [absoluteString getStringByurlDecode];
+}
+
+-(NSString*)getStringByurlDecode
+{
+    if (self.length>0)
+    {
+        NSString *absoluteString = self;
+        
+        NSDictionary *dic = [self getParamFromURLByurlDecode];
+        
+        NSString *parameters = [self stringForHTTPBySortParameters:dic];
+        
+        NSRange rg = [absoluteString rangeOfString:@"?"];
+        
+        NSString *urlString = [absoluteString substringToIndex:rg.location+1];
+        urlString = [urlString stringByAppendingString:parameters];
+        
+        return urlString;
+    }
+    return nil;
+}
+
+//从url得到请求参数
+-(NSDictionary*)getParamFromURLByurlEncode
+{
+    if (self.length>0)
+    {
+        NSString *queryStr = self;
+        if (((NSRange)[queryStr rangeOfString:@"?"]).location!=NSNotFound) {
+            
+            NSRange rg = [queryStr rangeOfString:@"?"];
+            queryStr = [queryStr substringWithRange:NSMakeRange(rg.location+1, queryStr.length-rg.location-1)];
+        }
+        
+        NSArray *queryArr = [queryStr componentsSeparatedByString:@"&"];
+        
+        NSMutableDictionary *mDic = [[NSMutableDictionary alloc] initWithCapacity:0];
+        
+        for (NSString *querytemp in queryArr) {
+            NSArray *keyvalue = [querytemp componentsSeparatedByString:@"="];
+            NSString *valuString =keyvalue[1];
+            [mDic setObject:valuString.urlEncode forKey:keyvalue[0]];
+        }
+        
+        return [mDic copy];
+    }
+    return nil;
+}
+
+//从url得到请求参数
+-(NSDictionary*)getParamFromURLByurlDecode
+{
+    if (self.length>0)
+    {
+        NSString *queryStr = self;
+        if (((NSRange)[queryStr rangeOfString:@"?"]).location!=NSNotFound) {
+            
+            NSRange rg = [queryStr rangeOfString:@"?"];
+            queryStr = [queryStr substringWithRange:NSMakeRange(rg.location+1, queryStr.length-rg.location-1)];
+        }
+        
+        NSArray *queryArr = [queryStr componentsSeparatedByString:@"&"];
+        
+        NSMutableDictionary *mDic = [[NSMutableDictionary alloc] initWithCapacity:0];
+        
+        for (NSString *querytemp in queryArr) {
+            NSArray *keyvalue = [querytemp componentsSeparatedByString:@"="];
+            NSString *valuString =keyvalue[1];
+            [mDic setObject:valuString.urlDecode forKey:keyvalue[0]];
+        }
+        
+        return [mDic copy];
+    }
+    return nil;
+}
+
+//对请求参数排序并生成字符串，为了计算md5值
+- (NSString *)stringForHTTPBySortParameters:(NSDictionary*)param
+{
+    NSString *ret = nil;
+    // 对字典key排序，保证param的顺序不影响最后结果
+    NSArray *arr = [[param allKeys] sortedArrayWithOptions:NSSortConcurrent
+                                           usingComparator:^NSComparisonResult(id obj1, id obj2){
+                                               if (([obj1 isKindOfClass:[NSString class]]) &&
+                                                   ([obj2 isKindOfClass:[NSString class]]))
+                                               {
+                                                   return ([obj1 compare:obj2]);
+                                               }
+                                               return (NSOrderedSame);
+                                           }];
+    if (arr.count > 0)
+    {
+        NSMutableArray *mArr = [NSMutableArray array];
+        
+        for (NSString *key in arr)
+        {
+            NSString *str = [NSString stringWithFormat:@"%@=%@", key, [param objectForKey:key]];
+            [mArr addObject:str];
+        }
+        
+        //数组中间加上地址符
+        ret = [mArr componentsJoinedByString:@"&"];
+    }
+    return ret;
+}
+
 - (NSString *)urlEncode
 {
     NSString *url = nil;
-
+    
     if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_9_0) {
         url = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,  (CFStringRef)self,  NULL,  (CFStringRef)@"!*'();:@&=+$,/?%#[]",  kCFStringEncodingUTF8));
     }
     else
     {
         // RFC 3986 规范
-         NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`-_"].invertedSet;
+        NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`-_"].invertedSet;
         url =  [self stringByAddingPercentEncodingWithAllowedCharacters:charset];
     }
-   
+    
     return url;
 }
 
@@ -293,7 +425,7 @@
 
 -(NSString*)XMLString
 {
-   return [[self class] encodeXMLString:self];
+    return [[self class] encodeXMLString:self];
 }
 
 -(NSString*)stringFromXMLString
