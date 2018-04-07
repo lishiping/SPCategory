@@ -27,7 +27,7 @@
     return [[NSDate date] sp_timestampString];
 }
 
-+(long long)sp_nowTimestamp
++(double)sp_nowTimestamp
 {
     return [[NSDate date] sp_timestamp];
 }
@@ -37,20 +37,20 @@
     return [NSString stringWithFormat:@"%llu",(UInt64)[self sp_timestamp]];
 }
 
--(long long)sp_timestamp
+-(double)sp_timestamp
 {
-    return [self timeIntervalSince1970] *1000;
+    return [self timeIntervalSince1970];
 }
 
 + (NSDate *)sp_dateFromTimestampString:(NSString *)timestampString
 {
-    NSTimeInterval timeInterval = [timestampString doubleValue] / 1000.0;
+    NSTimeInterval timeInterval = [timestampString doubleValue];
     return [NSDate dateWithTimeIntervalSince1970:timeInterval];
 }
 
 + (NSDate *)sp_dateFromTimestamp:(double)timestamp
 {
-    return [NSDate dateWithTimeIntervalSince1970:(timestamp / 1000.0)];
+    return [NSDate dateWithTimeIntervalSince1970:timestamp];
 }
 
 + (NSDate *)sp_dateWithLocalNaturalLanguageString:(NSString *)timeString

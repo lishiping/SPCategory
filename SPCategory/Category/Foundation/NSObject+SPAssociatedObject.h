@@ -33,6 +33,14 @@
  */
 - (id)sp_objectWithAssociatedKey:(void *)key;
 
+/**
+ 设置关联对象给对应key，默认（OBJC_ASSOCIATION_RETAIN_NONATOMIC）
+
+ @param object 关联对象
+ @param key 关联对象对应key
+ */
+- (void)sp_setObject:(id)object forAssociatedKey:(void *)key;
+
 /*!
  *  设置关联对象给对应key
  *

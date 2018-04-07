@@ -26,6 +26,11 @@
     return objc_getAssociatedObject(self, key);
 }
 
+- (void)sp_setObject:(id)object forAssociatedKey:(void *)key
+{
+    objc_setAssociatedObject(self, key, object,OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (void)sp_setObject:(id)object forAssociatedKey:(void *)key retained:(BOOL)retain
 {
     objc_setAssociatedObject(self, key, object, retain?OBJC_ASSOCIATION_RETAIN_NONATOMIC:OBJC_ASSOCIATION_ASSIGN);

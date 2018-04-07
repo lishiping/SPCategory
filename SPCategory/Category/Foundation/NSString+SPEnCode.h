@@ -34,18 +34,18 @@
 //转换为表情字符
 - (NSString *)emojiString;
 
-//将url的字符串编码后生成url并返回,
+//将url的字符串编码后返回字符串,
 //lishiping://login?title=你好&username=lishiping&password=123456
 //转化为
 //lishiping://login?title=%e4%bd%a0%e5%a5%bd&username=lishiping&password=123456
--(NSURL*)getURLWithStringByurlEncode;
+-(NSURL*)getURLByurlEncode;
+-(NSString*)getStringByurlEncode;
 
-//将url对象解码后返回字符串
+//将url的字符串解码后返回字符串
 //lishiping://login?title=%e4%bd%a0%e5%a5%bd&username=lishiping&password=123456
 //转化为
 //lishiping://login?title=你好&username=lishiping&password=123456
-+(NSString*)getStringByurlDecodeWithURL:(NSURL*)url;
-//将url的字符串解码后返回字符串
+-(NSURL*)getURLByurlDecode;
 -(NSString*)getStringByurlDecode;
 
 //从url字符串中得到编码后的请求参数

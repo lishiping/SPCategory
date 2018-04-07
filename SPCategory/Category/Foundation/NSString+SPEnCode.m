@@ -67,7 +67,19 @@
     }
 }
 
--(NSURL*)getURLWithStringByurlEncode
+-(NSURL*)getURLByurlEncode
+{
+    if (self.length>0)
+    {
+        NSString *urlString = [self getStringByurlEncode];
+        if (urlString.length>0) {
+            return [NSURL URLWithString:urlString];
+        }
+    }
+    return nil;
+}
+
+-(NSString*)getStringByurlEncode
 {
     if (self.length>0)
     {
@@ -82,17 +94,26 @@
         NSString *parameters = [self stringForHTTPBySortParameters:dic];
         
         NSString *urlString = [absoluteString substringToIndex:rg.location+1];
-        urlString = [urlString stringByAppendingString:parameters];
         
-        return [NSURL URLWithString:urlString];
+        if (urlString.length>0&&parameters.length>0) {
+            urlString = [urlString stringByAppendingString:parameters];
+        }
+        
+        return urlString;
     }
     return nil;
 }
 
-+(NSString*)getStringByurlDecodeWithURL:(NSURL*)url
+-(NSURL*)getURLByurlDecode
 {
-    NSString *absoluteString = url.absoluteString;
-    return [absoluteString getStringByurlDecode];
+    if (self.length>0)
+    {
+        NSString *urlString = [self getStringByurlDecode];
+        if (urlString.length>0) {
+            return [NSURL URLWithString:urlString];
+        }
+    }
+    return nil;
 }
 
 -(NSString*)getStringByurlDecode
@@ -108,7 +129,10 @@
         NSRange rg = [absoluteString rangeOfString:@"?"];
         
         NSString *urlString = [absoluteString substringToIndex:rg.location+1];
-        urlString = [urlString stringByAppendingString:parameters];
+        
+        if (urlString.length>0&&parameters.length>0) {
+            urlString = [urlString stringByAppendingString:parameters];
+        }
         
         return urlString;
     }
@@ -128,13 +152,15 @@
         }
         
         NSArray *queryArr = [queryStr componentsSeparatedByString:@"&"];
-        
         NSMutableDictionary *mDic = [[NSMutableDictionary alloc] initWithCapacity:0];
         
         for (NSString *querytemp in queryArr) {
             NSArray *keyvalue = [querytemp componentsSeparatedByString:@"="];
-            NSString *valuString =keyvalue[1];
-            [mDic setObject:valuString.urlEncode forKey:keyvalue[0]];
+            NSString *key = keyvalue[0];
+            NSString *value =keyvalue[1];
+            if (key.length>0&&value.length>0) {
+                [mDic setObject:value.urlEncode forKey:key];
+            }
         }
         
         return [mDic copy];
@@ -155,13 +181,15 @@
         }
         
         NSArray *queryArr = [queryStr componentsSeparatedByString:@"&"];
-        
         NSMutableDictionary *mDic = [[NSMutableDictionary alloc] initWithCapacity:0];
         
         for (NSString *querytemp in queryArr) {
             NSArray *keyvalue = [querytemp componentsSeparatedByString:@"="];
-            NSString *valuString =keyvalue[1];
-            [mDic setObject:valuString.urlDecode forKey:keyvalue[0]];
+            NSString *key = keyvalue[0];
+            NSString *value =keyvalue[1];
+            if (key.length>0&&value.length>0) {
+                [mDic setObject:value.urlDecode forKey:key];
+            }
         }
         
         return [mDic copy];
@@ -173,29 +201,37 @@
 - (NSString *)stringForHTTPBySortParameters:(NSDictionary*)param
 {
     NSString *ret = nil;
-    // 对字典key排序，保证param的顺序不影响最后结果
-    NSArray *arr = [[param allKeys] sortedArrayWithOptions:NSSortConcurrent
-                                           usingComparator:^NSComparisonResult(id obj1, id obj2){
-                                               if (([obj1 isKindOfClass:[NSString class]]) &&
-                                                   ([obj2 isKindOfClass:[NSString class]]))
-                                               {
-                                                   return ([obj1 compare:obj2]);
-                                               }
-                                               return (NSOrderedSame);
-                                           }];
-    if (arr.count > 0)
+    
+    if (param.count>0)
     {
-        NSMutableArray *mArr = [NSMutableArray array];
-        
-        for (NSString *key in arr)
+        // 对字典key排序，保证param的顺序不影响最后结果
+        NSArray *arr = [[param allKeys] sortedArrayWithOptions:NSSortConcurrent
+                                               usingComparator:^NSComparisonResult(id obj1, id obj2){
+                                                   if (([obj1 isKindOfClass:[NSString class]]) &&
+                                                       ([obj2 isKindOfClass:[NSString class]]))
+                                                   {
+                                                       return ([obj1 compare:obj2]);
+                                                   }
+                                                   return (NSOrderedSame);
+                                               }];
+        if (arr.count > 0)
         {
-            NSString *str = [NSString stringWithFormat:@"%@=%@", key, [param objectForKey:key]];
-            [mArr addObject:str];
+            NSMutableArray *mArr = [NSMutableArray array];
+            
+            for (NSString *key in arr)
+            {
+                NSString *value =[param objectForKey:key];
+                if (key.length>0&&value.length>0) {
+                    NSString *str = [NSString stringWithFormat:@"%@=%@",key,value];
+                    [mArr addObject:str];
+                }
+            }
+            
+            //数组中间加上地址符
+            ret = [mArr componentsJoinedByString:@"&"];
         }
-        
-        //数组中间加上地址符
-        ret = [mArr componentsJoinedByString:@"&"];
     }
+    
     return ret;
 }
 

@@ -53,7 +53,7 @@ typedef enum{
 
  @return 时间戳
  */
-+(long long)sp_nowTimestamp;
++(double)sp_nowTimestamp;
 
 /**
  获取日期对象的时间戳字符串
@@ -67,7 +67,7 @@ typedef enum{
  
  @return 时间戳
  */
--(long long)sp_timestamp;
+-(double)sp_timestamp;
 
 /**
  通过时间戳字符串得到时间日期
