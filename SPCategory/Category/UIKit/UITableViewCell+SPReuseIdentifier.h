@@ -10,6 +10,7 @@
 
 @interface UITableViewCell (SPReuseIdentifier)
 
+//提供当前cell的复用ID
 +(NSString*)reuseIdentifier;
 
 @end

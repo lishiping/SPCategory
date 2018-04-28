@@ -63,11 +63,7 @@
 //    }];
     
     
-//    [self sp_showAlertView_title:@"更新" ok_title:@"确定" ok_block:^(UIAlertAction * _Nullable action) {
-//
-//        [UIApplication sp_openSystemSettingNotification];
-//
-//    } ];
+
 //
 //    [self sp_navBar:BarStyle_BlackBGColor_WhiteTitle];
 //    [self sp_statusBar:StatusBarStyle_LightContent];
@@ -98,8 +94,24 @@
 //    NSLog(@"urldecode===%@",urldecode);
 
     
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    button.frame =CGRectMake(100, 100, 200, 50);
+    [button setTitle:@"测试" forState:UIControlStateNormal];
+    
+    [button addTarget:self action:@selector(testClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:button];
 }
 
+-(void)testClick:(id)sender
+{
+    [self sp_showAlertView_title:@"更新" ok_title:@"确定" ok_block:^(UIAlertAction * _Nullable action) {
+//        [self sp_showHUD:@"dasdsdfasdf" animation:YES];
+        
+            NSLog(@"===");
+    } ];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

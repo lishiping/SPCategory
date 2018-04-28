@@ -38,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		0157726AEB35BFD18C1D3A74 /* Pods-SPCategory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPCategory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPCategory/Pods-SPCategory.debug.xcconfig"; sourceTree = "<group>"; };
+		1E948250208F667400B5F82C /* SPCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCategory.h; sourceTree = "<group>"; };
 		1EB5F50620204BBC00007899 /* UITableViewCell+SPReuseIdentifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+SPReuseIdentifier.h"; sourceTree = "<group>"; };
 		1EB5F50720204BBC00007899 /* UITableViewCell+SPReuseIdentifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+SPReuseIdentifier.m"; sourceTree = "<group>"; };
 		33A4D3371F73ED5B001CF006 /* pika3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pika3.gif; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 				9669DF801FC6946E0087B5BE /* NSString+SPEnCode.m */,
 				9669DF871FC6946E0087B5BE /* NSString+SPSize.h */,
 				9669DF7A1FC6946E0087B5BE /* NSString+SPSize.m */,
+				1E948250208F667400B5F82C /* SPCategory.h */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";

@@ -19,14 +19,13 @@
 
 
 #import <UIKit/UIKit.h>
+#import "NSObject+SPAssociatedObject.h"
 
 typedef void (^SPIdClickedBlock)(UIAlertAction * _Nullable action);
 
 @interface UIViewController (SPUIAlertController)
 
-@property (nonatomic, strong) UIAlertController * _Nullable spAlertVC;//警告框
-
-//这个方法是为了解决当前VC已经消失了，而由于其他原因Alert还未消失，可以在在viewdiddisappear里面加入移除alertview
+//这个方法是为了解决当前VC已经消失了(主动控制警告框消失的方法)，而由于其他原因Alert还未消失，可以在在viewdiddisappear里面加入移除alertview
 -(void)sp_removespAlertVC;
 
 /*本类别的特点：
@@ -46,7 +45,7 @@ typedef void (^SPIdClickedBlock)(UIAlertAction * _Nullable action);
  @param ok_title 按钮名字
  @param ok_block 按钮回调
  */
--(void)sp_showAlertView_title:(NSString*_Nullable)title
+-(UIAlertController *_Nullable)sp_showAlertView_title:(NSString*_Nullable)title
                      ok_title:(NSString*_Nullable)ok_title
                      ok_block:(SPIdClickedBlock _Nullable )ok_block;
 
@@ -58,7 +57,7 @@ typedef void (^SPIdClickedBlock)(UIAlertAction * _Nullable action);
  @param ok_title 按钮名字
  @param ok_block 按钮回调
  */
--(void)sp_showAlertView_title:(NSString*_Nullable)title
+-(UIAlertController *_Nullable)sp_showAlertView_title:(NSString*_Nullable)title
                       message:(NSString*_Nullable)message
                      ok_title:(NSString*_Nullable)ok_title
                      ok_block:(SPIdClickedBlock _Nullable )ok_block;
@@ -73,7 +72,7 @@ typedef void (^SPIdClickedBlock)(UIAlertAction * _Nullable action);
  @param ok_block 按钮回调
  @param completion 完成回调
  */
--(void)sp_showAlertView_title:(NSString*_Nullable)title
+-(UIAlertController *_Nullable)sp_showAlertView_title:(NSString*_Nullable)title
                       message:(NSString*_Nullable)message
                      animated: (BOOL)flag
                      ok_title:(NSString*_Nullable)ok_title
@@ -90,7 +89,7 @@ typedef void (^SPIdClickedBlock)(UIAlertAction * _Nullable action);
  @param ok_block 确认或者自定义按钮回调
  @param cancel_block 取消或者自定义按钮回调
  */
--(void)sp_showAlertView_title:(NSString*_Nullable)title
+-(UIAlertController *_Nullable)sp_showAlertView_title:(NSString*_Nullable)title
                       message:(NSString*_Nullable)message
                      ok_title:(NSString*_Nullable)ok_title
                  cancel_title:(NSString*_Nullable)cancel_title
@@ -109,7 +108,7 @@ typedef void (^SPIdClickedBlock)(UIAlertAction * _Nullable action);
  @param cancel_block 取消按钮或者自定义按钮回调
  @param completion UIAlertViewController完成弹出后的回调（不用可传nil）
  */
--(void)sp_showAlertView_title:(NSString*_Nullable)title
+-(UIAlertController *_Nullable)sp_showAlertView_title:(NSString*_Nullable)title
                       message:(NSString*_Nullable)message
                      ok_title:(NSString*_Nullable)ok_title
                  cancel_title:(NSString*_Nullable)cancel_title
@@ -131,7 +130,7 @@ typedef void (^SPIdClickedBlock)(UIAlertAction * _Nullable action);
  @param ok_block 确认或者自定义按钮的回调
  @param cancel_block 取消或者自定义按钮的回调
  */
--(void)sp_showActionSheet_title:(NSString*_Nullable)title
+-(UIAlertController *_Nullable)sp_showActionSheet_title:(NSString*_Nullable)title
                         message:(NSString*_Nullable)message
                        ok_title:(NSString*_Nullable)ok_title
                    cancel_title:(NSString*_Nullable)cancel_title
@@ -148,7 +147,7 @@ typedef void (^SPIdClickedBlock)(UIAlertAction * _Nullable action);
  @param ok_block 确认或者自定义按钮的回调
  @param cancel_block 取消或者自定义按钮的回调
  */
--(void)sp_showActionSheet_title:(NSString*_Nullable)title
+-(UIAlertController *_Nullable)sp_showActionSheet_title:(NSString*_Nullable)title
                         message:(NSString*_Nullable)message
            ok_title_destructive:(NSString*_Nullable)ok_title_destructive
                    cancel_title:(NSString*_Nullable)cancel_title
@@ -165,7 +164,7 @@ typedef void (^SPIdClickedBlock)(UIAlertAction * _Nullable action);
  @param ok_block 确认或者自定义按钮的回调
  @param cancel_block 取消或者自定义按钮的回调
  */
--(void)sp_showActionSheet_title:(NSString*_Nullable)title
+-(UIAlertController *_Nullable)sp_showActionSheet_title:(NSString*_Nullable)title
                         message:(NSString*_Nullable)message
                ok_title_default:(NSString*_Nullable)ok_title_default
                    cancel_title:(NSString*_Nullable)cancel_title
@@ -184,7 +183,7 @@ typedef void (^SPIdClickedBlock)(UIAlertAction * _Nullable action);
  @param ok_block 确认或者自定义按钮的回调
  @param cancel_block 取消或者自定义按钮的回调
  */
--(void)sp_showActionSheet_title:(NSString*_Nullable)title
+-(UIAlertController *_Nullable)sp_showActionSheet_title:(NSString*_Nullable)title
                         message:(NSString*_Nullable)message
                        ok_title:(NSString*_Nullable)ok_title
                    cancel_title:(NSString*_Nullable)cancel_title

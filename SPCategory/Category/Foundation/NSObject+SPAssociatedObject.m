@@ -26,6 +26,16 @@
     return objc_getAssociatedObject(self, key);
 }
 
+- (void)sp_removeObjectforAssociatedKey:(void *)key
+{
+    objc_setAssociatedObject(self, key, nil,OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (void)sp_removeAssociatedObjects
+{
+    objc_removeAssociatedObjects(self);
+}
+
 - (void)sp_setObject:(id)object forAssociatedKey:(void *)key
 {
     objc_setAssociatedObject(self, key, object,OBJC_ASSOCIATION_RETAIN_NONATOMIC);

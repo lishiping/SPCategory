@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '54CD647EE461BFE6CA4AF983C909875F'
-               BlueprintName = 'SafeData'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libSafeData.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "54CD647EE461BFE6CA4AF983C909875F"
+               BlueprintName = "SafeData"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libSafeData.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -1,7 +1,7 @@
 PODS:
   - MBProgressHUD (1.0.0)
   - SafeData (0.1.2)
-  - SPMacro (0.1.2)
+  - SPMacro (0.3.1)
 
 DEPENDENCIES:
   - MBProgressHUD (= 1.0.0)
@@ -11,7 +11,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SafeData: d654eee95046a2c25ab67dec883977bb6699a83a
-  SPMacro: 7922489e8a3d1d9c2cd2db12602fde41e183b820
+  SPMacro: 6ad947b6dd58cdf33a2f9238d081df6de6178efe
 
 PODFILE CHECKSUM: af7239bc8cb15eb55c1a2fad96ac3725fc271d50
 

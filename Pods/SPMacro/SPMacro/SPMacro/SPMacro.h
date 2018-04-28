@@ -19,10 +19,8 @@
 #ifndef SPMacro_h
 #define SPMacro_h
 
-
+#import "SPFoundationMacro.h"
+#import "SPUIKitMacro.h"
 
 #endif /* SPMacro_h */
 
-#import "SPFoundationMacro.h"
-#import "SPUIKitMacro.h"
-#import "SPBlockDefine.h"

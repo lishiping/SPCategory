@@ -21,11 +21,13 @@
 #import <objc/runtime.h>
 
 /*!
- *  添加 NSObject 设置，获取关联对象的工具方法。
+    本来是快捷使用runtime的关联对象功能
+ *  添加 NSObject 设置和获取关联对象的类别方法。
  */
 @interface NSObject (SPAssociatedObject)
+
 /*!
- *  取得当前对象对应key的关联对象
+ *  获取当前对象对应key的关联对象
  *
  *  @param key 关联对象key
  *
@@ -34,15 +36,35 @@
 - (id)sp_objectWithAssociatedKey:(void *)key;
 
 /**
- 设置关联对象给对应key，默认（OBJC_ASSOCIATION_RETAIN_NONATOMIC）
+ 绑定完关联对象一定要移除，否则容易造成强引用而内存泄漏
 
+ @param key 移除指定关联对象的key
+ */
+- (void)sp_removeObjectforAssociatedKey:(void *)key;
+
+/**
+ 移除当前对象所有的关联对象（不建议使用，谨慎使用）
+ */
+- (void)sp_removeAssociatedObjects;
+
+/**
+ 设置关联对象的对应key，默认（OBJC_ASSOCIATION_RETAIN_NONATOMIC）
+
+ enum {
+ OBJC_ASSOCIATION_ASSIGN = 0, //弱引用，对象销毁不会造成关联对象的引用计数变化
+ OBJC_ASSOCIATION_RETAIN_NONATOMIC = 1, //强引用，不支持多线程安全
+ OBJC_ASSOCIATION_COPY_NONATOMIC = 3, //深拷贝，不支持多线程安全
+ OBJC_ASSOCIATION_RETAIN = 01401, //强引用支持线程安全
+ OBJC_ASSOCIATION_COPY = 01403  //深拷贝，支持线程安全
+ };
+ 
  @param object 关联对象
  @param key 关联对象对应key
  */
 - (void)sp_setObject:(id)object forAssociatedKey:(void *)key;
 
 /*!
- *  设置关联对象给对应key
+ *  设置关联对象的对应key
  *
  *  @param object 关联对象
  *  @param key    关联对象对应key

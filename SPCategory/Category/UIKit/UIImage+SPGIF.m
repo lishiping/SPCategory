@@ -43,45 +43,63 @@
     return [UIImage imageNamed:name];
 }
 
-+ (UIImage *)sp_animatedGIFWithData:(NSData *)data {
-    if (!data) {
-        return nil;
-    }
-    
-    CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef)data, NULL);
-    
-    size_t count = CGImageSourceGetCount(source);
-    
-    UIImage *animatedImage;
-    
-    if (count <= 1) {
-        animatedImage = [[UIImage alloc] initWithData:data];
-    }
-    else {
-        NSMutableArray *images = [NSMutableArray array];
++ (UIImage *)sp_animatedGIFWithData:(NSData *)data
+{
+   return  [self sp_animatedGIFWithData:data isScale:NO];
+}
+
++ (UIImage *)sp_animatedGIFWithData:(NSData *)data isScale:(BOOL)isScale
+{
+    if ([data isKindOfClass:[NSData class]])
+    {
+        CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef)data, NULL);
+        size_t count = CGImageSourceGetCount(source);
         
-        NSTimeInterval duration = 0.0f;
+        UIImage *animatedImage;
+        CGFloat scale = [UIScreen mainScreen].scale;
         
-        for (size_t i = 0; i < count; i++) {
-            CGImageRef image = CGImageSourceCreateImageAtIndex(source, i, NULL);
+        if (count <= 1)
+        {
+            if (isScale) {
+                animatedImage = [[UIImage alloc] initWithData:data scale:scale];
+            }else
+            {
+                animatedImage = [[UIImage alloc] initWithData:data];
+            }
+        }
+        else
+        {
+            NSMutableArray *images = [NSMutableArray array];
+            NSTimeInterval duration = 0.0f;
             
-            duration += [self sp_frameDurationAtIndex:i source:source];
+            for (size_t i = 0; i < count; i++) {
+                CGImageRef image = CGImageSourceCreateImageAtIndex(source, i, NULL);
+                
+                duration += [self sp_frameDurationAtIndex:i source:source];
+                
+                if (isScale) {
+                    [images addObject:[UIImage imageWithCGImage:image scale:scale orientation:UIImageOrientationUp]];
+                }
+                {
+                    [images addObject:[UIImage imageWithCGImage:image]];
+                }
+                
+                CGImageRelease(image);
+            }
             
-            [images addObject:[UIImage imageWithCGImage:image scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp]];
+            if (!duration) {
+                duration = (1.0f / 10.0f) * count;
+            }
             
-            CGImageRelease(image);
+            animatedImage = [UIImage animatedImageWithImages:images duration:duration];
         }
         
-        if (!duration) {
-            duration = (1.0f / 10.0f) * count;
-        }
+        CFRelease(source);
         
-        animatedImage = [UIImage animatedImageWithImages:images duration:duration];
+        return animatedImage;
     }
     
-    CFRelease(source);
-    
-    return animatedImage;
+    return nil;
 }
 
 + (float)sp_frameDurationAtIndex:(NSUInteger)index source:(CGImageSourceRef)source {
@@ -115,8 +133,10 @@
     return frameDuration;
 }
 
-- (UIImage *)sp_animatedImageByScalingAndCroppingToSize:(CGSize)size {
-    if (CGSizeEqualToSize(self.size, size) || CGSizeEqualToSize(size, CGSizeZero)) {
+- (UIImage *)sp_animatedImageByScalingAndCroppingToSize:(CGSize)size
+{
+    if (CGSizeEqualToSize(self.size, size) || CGSizeEqualToSize(size, CGSizeZero))
+    {
         return self;
     }
     
