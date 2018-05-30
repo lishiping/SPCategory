@@ -10,13 +10,9 @@
 #define SPCategory_h
 
 
-
-#endif /* SPCategory_h */
-
-
 #import "NSString+SPSize.h"
 #import "NSString+SPEnCode.h"
-#import "NSString+SPBase64.h"
+#import "NSData+SPBase64.h"
 #import "NSString+SPAssociatedObject.h"
 #import "NSDate+SPTransform.h"
 #import "NSUserDefaults+SPSafe.h"
@@ -30,4 +26,8 @@
 #import "UIViewController+SPHUD.h"
 #import "UIViewController+SPNavigationBarStyle.h"
 #import "UIViewController+SPStatusBarStyle.h"
+
+#endif /* SPCategory_h */
+
+
 
