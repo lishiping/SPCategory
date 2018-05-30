@@ -38,13 +38,13 @@
 + (UIImage *)sp_animatedGIFWithData:(NSData *)data;
 
 /**
- 初始化图片数据如果是gif转为动画图片，如果是静图转为静态图片
- 
+ 初始化图片数据如果是gif转为动画图片，如果是静图转为静态图片,可以设置缩放比例
+
  @param data 图片数据
- @param isScale 是否按照屏幕比例缩放
- @return 图片对象
+ @param scale 缩放比例
+ @return 动画图片对象
  */
-+ (UIImage *)sp_animatedGIFWithData:(NSData *)data isScale:(BOOL)isScale;
++ (UIImage *)sp_animatedGIFWithData:(NSData *)data scale:(CGFloat)scale;
 
 /**
  gif图按照尺寸截取

@@ -45,27 +45,16 @@
 
 + (UIImage *)sp_animatedGIFWithData:(NSData *)data
 {
-   return  [self sp_animatedGIFWithData:data isScale:NO];
-}
-
-+ (UIImage *)sp_animatedGIFWithData:(NSData *)data isScale:(BOOL)isScale
-{
     if ([data isKindOfClass:[NSData class]])
     {
         CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef)data, NULL);
         size_t count = CGImageSourceGetCount(source);
         
         UIImage *animatedImage;
-        CGFloat scale = [UIScreen mainScreen].scale;
         
         if (count <= 1)
         {
-            if (isScale) {
-                animatedImage = [[UIImage alloc] initWithData:data scale:scale];
-            }else
-            {
-                animatedImage = [[UIImage alloc] initWithData:data];
-            }
+            animatedImage = [[UIImage alloc] initWithData:data];
         }
         else
         {
@@ -77,12 +66,51 @@
                 
                 duration += [self sp_frameDurationAtIndex:i source:source];
                 
-                if (isScale) {
-                    [images addObject:[UIImage imageWithCGImage:image scale:scale orientation:UIImageOrientationUp]];
-                }
-                {
-                    [images addObject:[UIImage imageWithCGImage:image]];
-                }
+                [images addObject:[UIImage imageWithCGImage:image]];
+                
+                CGImageRelease(image);
+            }
+            
+            if (!duration) {
+                duration = (1.0f / 10.0f) * count;
+            }
+            
+            animatedImage = [UIImage animatedImageWithImages:images duration:duration];
+        }
+        
+        CFRelease(source);
+        
+        return animatedImage;
+    }
+    
+    return nil;
+}
+
++ (UIImage *)sp_animatedGIFWithData:(NSData *)data scale:(CGFloat)scale
+{
+    if ([data isKindOfClass:[NSData class]])
+    {
+        CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef)data, NULL);
+        size_t count = CGImageSourceGetCount(source);
+        
+        UIImage *animatedImage;
+        
+        if (count <= 1)
+        {
+            animatedImage = [[UIImage alloc] initWithData:data scale:scale];
+        }
+        else
+        {
+            NSMutableArray *images = [NSMutableArray array];
+            NSTimeInterval duration = 0.0f;
+            
+            for (size_t i = 0; i < count; i++)
+            {
+                CGImageRef image = CGImageSourceCreateImageAtIndex(source, i, NULL);
+                
+                duration += [self sp_frameDurationAtIndex:i source:source];
+                
+                [images addObject:[UIImage imageWithCGImage:image scale:scale orientation:UIImageOrientationUp]];
                 
                 CGImageRelease(image);
             }
@@ -109,11 +137,12 @@
     NSDictionary *gifProperties = frameProperties[(NSString *)kCGImagePropertyGIFDictionary];
     
     NSNumber *delayTimeUnclampedProp = gifProperties[(NSString *)kCGImagePropertyGIFUnclampedDelayTime];
-    if (delayTimeUnclampedProp) {
+    if (delayTimeUnclampedProp)
+    {
         frameDuration = [delayTimeUnclampedProp floatValue];
     }
-    else {
-        
+    else
+    {
         NSNumber *delayTimeProp = gifProperties[(NSString *)kCGImagePropertyGIFDelayTime];
         if (delayTimeProp) {
             frameDuration = [delayTimeProp floatValue];
