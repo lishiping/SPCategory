@@ -13,7 +13,7 @@
 #import "NSString+SPSize.h"
 #import "NSString+SPEnCode.h"
 #import "NSData+SPBase64.h"
-#import "NSString+SPAssociatedObject.h"
+#import "NSObject+SPAssociatedObject.h"
 #import "NSDate+SPTransform.h"
 #import "NSUserDefaults+SPSafe.h"
 
