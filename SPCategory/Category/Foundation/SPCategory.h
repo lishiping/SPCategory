@@ -14,6 +14,7 @@
 #import "NSString+SPEnCode.h"
 #import "NSData+SPBase64.h"
 #import "NSObject+SPAssociatedObject.h"
+#import "NSObject+SPTypeOfClass.h"
 #import "NSDate+SPTransform.h"
 #import "NSUserDefaults+SPSafe.h"
 
