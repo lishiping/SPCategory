@@ -16,6 +16,7 @@
 #import "NSDate+SPTransform.h"
 #import "NSString+SPEnCode.h"
 #import "NSObject+SPTypeOfClass.h"
+#import "UIView+SPAction.h"
 
 @interface ViewController ()
 
@@ -95,10 +96,10 @@
 //    NSLog(@"urldecode===%@",urldecode);
 
     
-    NSObject *o1 = nil;
-    if (o1.isMutableString) {
-        NSLog(@"dd");
-    }
+//    NSObject *o1 = nil;
+//    if (o1.isMutableString) {
+//        NSLog(@"dd");
+//    }
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
