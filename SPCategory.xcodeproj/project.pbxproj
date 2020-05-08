@@ -19,6 +19,7 @@
 		1E107963246408E900E7B06A /* UICollectionView+SPNoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E107953246408E800E7B06A /* UICollectionView+SPNoData.m */; };
 		1E107964246408E900E7B06A /* UILabel+SPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E107955246408E800E7B06A /* UILabel+SPAction.m */; };
 		1E107965246408E900E7B06A /* UIView+SPBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E107959246408E900E7B06A /* UIView+SPBorder.m */; };
+		1E49780024656E8F00AE6158 /* UINavigationController+SPGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4977FF24656E8F00AE6158 /* UINavigationController+SPGestureRecognizer.m */; };
 		1EB5F50820204BBC00007899 /* UITableViewCell+SPReuseIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5F50720204BBC00007899 /* UITableViewCell+SPReuseIdentifier.m */; };
 		33A4D3381F73ED5B001CF006 /* pika3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 33A4D3371F73ED5B001CF006 /* pika3.gif */; };
 		33A4D3401F74E74D001CF006 /* test.gif in Resources */ = {isa = PBXBuildFile; fileRef = 33A4D33F1F74E74D001CF006 /* test.gif */; };
@@ -75,6 +76,8 @@
 		1E107958246408E800E7B06A /* UIView+SPAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SPAction.h"; sourceTree = "<group>"; };
 		1E107959246408E900E7B06A /* UIView+SPBorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SPBorder.m"; sourceTree = "<group>"; };
 		1E10795A246408E900E7B06A /* UIImageView+SPAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SPAction.h"; sourceTree = "<group>"; };
+		1E4977FE24656E8F00AE6158 /* UINavigationController+SPGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+SPGestureRecognizer.h"; sourceTree = "<group>"; };
+		1E4977FF24656E8F00AE6158 /* UINavigationController+SPGestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+SPGestureRecognizer.m"; sourceTree = "<group>"; };
 		1E948250208F667400B5F82C /* SPCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCategory.h; sourceTree = "<group>"; };
 		1EB5F50620204BBC00007899 /* UITableViewCell+SPReuseIdentifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+SPReuseIdentifier.h"; sourceTree = "<group>"; };
 		1EB5F50720204BBC00007899 /* UITableViewCell+SPReuseIdentifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+SPReuseIdentifier.m"; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				9669DF7D1FC6946E0087B5BE /* UIViewController+SPStatusBarStyle.m */,
 				1EB5F50620204BBC00007899 /* UITableViewCell+SPReuseIdentifier.h */,
 				1EB5F50720204BBC00007899 /* UITableViewCell+SPReuseIdentifier.m */,
+				1E4977FE24656E8F00AE6158 /* UINavigationController+SPGestureRecognizer.h */,
+				1E4977FF24656E8F00AE6158 /* UINavigationController+SPGestureRecognizer.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -448,6 +453,7 @@
 				1E10795E246408E900E7B06A /* UIButton+SPAction.m in Sources */,
 				9669DF9C1FC695020087B5BE /* UIViewController+SPUIAlertController.m in Sources */,
 				1E10795D246408E900E7B06A /* UIButton+SPEdges.m in Sources */,
+				1E49780024656E8F00AE6158 /* UINavigationController+SPGestureRecognizer.m in Sources */,
 				1E107964246408E900E7B06A /* UILabel+SPAction.m in Sources */,
 				1E1079442464082000E7B06A /* NSAttributedString+SPSize.m in Sources */,
 				1E107962246408E900E7B06A /* UIImage+SPBase64.m in Sources */,
