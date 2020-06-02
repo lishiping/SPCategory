@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(BOOL)sp_isNumber;
 
+-(BOOL)sp_isData;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -15,7 +15,7 @@
 }
 -(BOOL)sp_isMutableString
 {
-    return [self isMemberOfClass:[NSMutableString class]];
+    return [self isKindOfClass:[NSMutableString class]];
 }
 
 -(BOOL)sp_isArray
@@ -24,7 +24,7 @@
 }
 -(BOOL)sp_isMutableArray
 {
-    return [self isMemberOfClass:[NSMutableArray class]];
+    return [self isKindOfClass:[NSMutableArray class]];
 }
 
 -(BOOL)sp_isDictionary
@@ -33,11 +33,17 @@
 }
 -(BOOL)sp_isMutableDictionary
 {
-    return [self isMemberOfClass:[NSMutableDictionary class]];
+    return [self isKindOfClass:[NSMutableDictionary class]];
 }
 
 -(BOOL)sp_isNumber
 {
     return [self isKindOfClass:[NSNumber class]];
 }
+
+-(BOOL)sp_isData
+{
+    return [self isKindOfClass:[NSData class]] &&[(NSData*)self length] > 0;
+}
+
 @end
