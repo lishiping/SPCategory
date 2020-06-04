@@ -146,7 +146,9 @@
 
 - (void)sp_removeNoDataView
 {
-    [self.sp_nodataView removeFromSuperview];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.sp_nodataView removeFromSuperview];
+    });
 }
 
 @end

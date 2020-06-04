@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SPCategory"
-  s.version      = "0.4.4"
+  s.version      = "0.5.0"
   s.summary      = "Often used Category lib,size,string,hud(gif图),etc,常用类别库,size,字符串,一行代码显示hud和错误页等"
   s.homepage     = "https://github.com/lishiping/SPCategory.git"
   s.license      = "LICENSE"

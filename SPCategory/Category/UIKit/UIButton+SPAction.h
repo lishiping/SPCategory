@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  扩展点击事件
  
- @param block 返回对象
+ @param action 返回对象
  */
 -(void)sp_button_onClickBlock:(SPIdBlock)action;
 

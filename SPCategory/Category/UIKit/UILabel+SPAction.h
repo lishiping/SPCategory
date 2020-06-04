@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param block 返回对象
  */
--(void)sp_label_onClickBlock:(SPIdBlock)block;
+-(UIGestureRecognizer*)sp_label_onClickBlock:(SPIdBlock)block;
 
 @end
 

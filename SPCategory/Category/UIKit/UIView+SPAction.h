@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param block 返回对象
  */
--(void)sp_view_onClickBlock:(SPIdBlock)block;
+-(UIGestureRecognizer*)sp_view_onClickBlock:(SPIdBlock)block;
 
 
 /**
@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param block 返回对象
  */
--(void)sp_view_longPressBlock:(SPIdBlock)block;
+-(UIGestureRecognizer*)sp_view_longPressBlock:(SPIdBlock)block;
 
 @end
 
